@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "TAN Nimbus";
+    src: url("TAN_Nimbus.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    --color-primary: #002f6d;
+    --color-on-primary: #e6d5b8;
+}
