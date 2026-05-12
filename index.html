@@ -51,7 +51,7 @@
     </section>
     <section
         id="location"
-        class="h-full flex justify-center justify-items-center p-8"
+        class="min-h-full grid grid-cols-[1fr_1fr] justify-center justify-items-center p-8"
     >
         <img src="family.png" class="max-h-full min-h-0" />
         <div class="text-center flex flex-col justify-between">
@@ -114,7 +114,7 @@
             </div>
         </div>
     </section>
-    <section id="unnamed" class="h-full">
+    <section id="ubicacion" class="min-h-full">
         <div
             class="grid grid-cols-[2fr_3fr] p-8 bg-[var(--color-on-primary)] text-[var(--color-primary)]"
         >
@@ -166,7 +166,7 @@
             >
                 <div class="flex">
                     <div
-                        class="-rotate-90 h-min w-max font-[family-name:Meditative] text-3xl tracking-widest self-center"
+                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
                     >
                         VUELOS
                     </div>
@@ -181,9 +181,10 @@
                 </div>
                 <div class="flex h-min">
                     <div
-                        class="-rotate-90 h-min w-max font-[family-name:Meditative] text-3xl text-center tracking-widest self-center"
+                        class="[writing-mode:sideways-lr] h-min p-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center"
                     >
-                        TRANSPORTE <span class="text-sm">aeropuerto-hotel</span>
+                        TRANSPORTE
+                        <span class="text-sm">aeropuerto-hotel</span>
                     </div>
                     <span class="gap-8">
                         El hotel se encuentra a aproximadamente 65 km del
@@ -197,19 +198,116 @@
                 </div>
                 <div class="flex h-min">
                     <div
-                        class="-rotate-90 h-min w-max font-[family-name:Meditative] text-3xl tracking-widest self-center"
+                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
                     >
                         DRESSCODE
                     </div>
                     <span class="gap-8">
-                        Al ser una boda en la playa, la idea es que se sientan
-                        cómodos y frescos, sin dejar de lado la elegancia
-                        caribeña.
-                        <br />Vestidos sueltos, telas livianas como lino o
-                        algodón, camisas frescas y looks relajados que acompañen
-                        el paisaje y la celebración.
+                        <p>
+                            Al ser una boda en la playa, la idea es que se
+                            sientan cómodos y frescos, sin dejar de lado la
+                            elegancia caribeña.
+                        </p>
+
+                        <p>
+                            Vestidos sueltos, telas livianas como lino o
+                            algodón, camisas frescas y looks relajados que
+                            acompañen el paisaje y la celebración.
+                        </p>
                     </span>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section id="musica" class="h-min grid grid-cols-[1.5fr_1fr] px-32 py-8">
+        <div class="row-span-3">
+            <h1
+                class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
+            >
+                Si esto no se baila, no entra
+            </h1>
+            <span
+                class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
+            >
+                <p>México, Argentina y una playlist armada entre todos.</p>
+                <p>Es el momento de bailar lo mejor de ambos países</p>
+            </span>
+            <button
+                id="add_music"
+                class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+            >
+                Sumá esa canción que no puede faltar
+                <div
+                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                >
+                    >
+                </div>
+            </button>
+        </div>
+        <div class="flex justify-center">
+            <img class="w-full max-w-[40rem] h-auto" src="dancing_dog.jpeg" />
+        </div>
+    </section>
+    <section
+        class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center"
+    >
+        <h1
+            class="text-4xl font-[family-name:Meditative] tracking-wide font-thin"
+        >
+            Lo importante es estar
+        </h1>
+        <p>
+            Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
+            enorme), así que con que estén ahí acompañándonos, ya lo es todo
+            para nosotros.
+        </p>
+        <p>Si igualmente alguien quiere sumar algo más, puede hacerlo acá:</p>
+        <button
+            class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
+        >
+            [Número de Cuenta] | Franco César Schiavinato | Bank of America
+        </button>
+    </section>
+    <section id="confirmacion" class="flex flex-col items-center min-h-full">
+        <h1
+            class="text-6xl font-[family-name:Meditative] tracking-wide font-thin"
+        >
+            ¿Nos acompañás?
+        </h1>
+        <div class="grid grid-cols-2 items-center font-thin w-full">
+            <div class="flex flex-col items-center text-center">
+                <p class="text-justify max-w-96">
+                    Para que todo fluya mejor, te pedimos que confirmes tu
+                    asistencia antes del <b>1ero de agosto 2027.</b>
+                </p>
+                <button
+                    id="confirm_button"
+                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+                >
+                    Confirmar asistencia
+                    <div
+                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                    >
+                        >
+                    </div>
+                </button>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="max-w-96 text-justify">
+                    Una vez que tengan su reservación en el hotel, les pedimos
+                    por favor que completen los datos que el hotel necesita
+                </p>
+                <button
+                    id="fulfill_reservation"
+                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+                >
+                    Completar datos
+                    <div
+                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                    >
+                        >
+                    </div>
+                </button>
             </div>
         </div>
     </section>
