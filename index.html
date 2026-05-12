@@ -125,7 +125,7 @@
                     >
                         Occidental at <br />Xcaret Destination
                     </h1>
-                    <span class="font-thin text-xs">
+                    <span class="font-thin text-xs text-justify">
                         Camino a Xcaret Carretera Federal Chetumal - <br />
                         Puerto, Avenida Benito Juárez, 282, 77710 <br />Playa
                         del Carmen, Q.R., México
@@ -133,6 +133,8 @@
                 </div>
                 <button
                     class="rounded-full p-2 bg-[var(--color-primary)] text-[var(--color-on-primary)] p-2 flex justify-center items-center gap-4 px-4 font-thin text-xl w-max"
+                    href="https://maps.app.goo.gl/3XJYvdT5k5KsA13K7"
+                    target="_blank"
                 >
                     Ver hotel
                     <div
@@ -164,13 +166,13 @@
             <div
                 class="grid grid-cols-3 text-[var(--color-on-primary)] font-thin"
             >
-                <div class="flex">
+                <div class="flex max-w-[40ch]">
                     <div
                         class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
                     >
                         VUELOS
                     </div>
-                    <span class="gap-8">
+                    <span class="gap-8 text-justify">
                         Para llegar, van a volar al Aeropuerto Internacional de
                         Cancún, el más cercano a Playa del Carmen. <br />
                         Si pueden, empiecen a mirar vuelos desde mayo de 2026
@@ -179,14 +181,14 @@
                         ingreso a México según su país de origen.
                     </span>
                 </div>
-                <div class="flex h-min">
+                <div class="flex h-min max-w-[40ch]">
                     <div
                         class="[writing-mode:sideways-lr] h-min p-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center"
                     >
                         TRANSPORTE
                         <span class="text-sm">aeropuerto-hotel</span>
                     </div>
-                    <span class="gap-8">
+                    <span class="gap-8 text-justify">
                         El hotel se encuentra a aproximadamente 65 km del
                         Aeropuerto Internacional de Cancún. <br />
                         Nuestra recomendación es coordinar el traslado
@@ -196,13 +198,13 @@
                         transporte privado o taxis autorizados.
                     </span>
                 </div>
-                <div class="flex h-min">
+                <div class="flex h-min max-w-[40ch]">
                     <div
                         class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
                     >
                         DRESSCODE
                     </div>
-                    <span class="gap-8">
+                    <span class="gap-8 text-justify">
                         <p>
                             Al ser una boda en la playa, la idea es que se
                             sientan cómodos y frescos, sin dejar de lado la
@@ -252,29 +254,32 @@
         class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center"
     >
         <h1
-            class="text-4xl font-[family-name:Meditative] tracking-wide font-thin"
+            class="text-5xl font-[family-name:Meditative] tracking-wide font-thin"
         >
             Lo importante es estar
         </h1>
-        <p>
+        <p class="max-w-[50ch] text-justify font-thin">
             Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
             enorme), así que con que estén ahí acompañándonos, ya lo es todo
             para nosotros.
         </p>
-        <p>Si igualmente alguien quiere sumar algo más, puede hacerlo acá:</p>
+        <p class="max-w-[50ch] text-justify font-thin">
+            Si igualmente alguien quiere sumar algo más, puede hacerlo acá:
+        </p>
         <button
             class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
         >
             [Número de Cuenta] | Franco César Schiavinato | Bank of America
         </button>
+        <p class="font-thin">(o USD efectivo)</p>
     </section>
     <section id="confirmacion" class="flex flex-col items-center min-h-full">
         <h1
-            class="text-6xl font-[family-name:Meditative] tracking-wide font-thin"
+            class="text-6xl font-[family-name:Meditative] tracking-wide font-thin m-24"
         >
             ¿Nos acompañás?
         </h1>
-        <div class="grid grid-cols-2 items-center font-thin w-full">
+        <div class="grid grid-cols-2 place-content-start font-thin w-full">
             <div class="flex flex-col items-center text-center">
                 <p class="text-justify max-w-96">
                     Para que todo fluya mejor, te pedimos que confirmes tu
@@ -310,5 +315,13 @@
                 </button>
             </div>
         </div>
+    </section>
+    <section
+        id="faq"
+        class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center"
+    >
+        <h1 class="text-5xl font-[family-name:Meditative] font-light">
+            ¿Tenés alguna duda o necesitas ayuda?
+        </h1>
     </section>
 </body>
