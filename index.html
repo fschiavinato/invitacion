@@ -10,318 +10,350 @@
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/lenis@1.3.23/dist/lenis.css"
-    />
-    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
-    <!-- <script>
-        new Lenis({
-            autoRaf: true,
-            autoToggle: true,
-            anchors: true,
-            allowNestedScroll: true,
-            naiveDimensions: true,
-            stopInertiaOnNavigate: true,
-        });
-    </script> -->
 </head>
-<body
-    class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)]"
->
-    <section
-        id="intro"
-        class="flex flex-col gap-16 h-full w-full justify-center"
+<html class="snap-y snap-mandatory text-[1.7vh]">
+    <body
+        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)]"
     >
-        <div
-            class="flex justify-around px-10 py-6 text-2xl font-thin tracking-widest"
+        <section
+            id="intro"
+            class="flex flex-col gap-16 h-svh w-svw justify-center snap-start"
         >
-            <span>Playa del Carmen, México</span>
-            <span>10 · 04 · 2027</span>
-        </div>
-
-        <div class="flex items-center justify-center text-center">
-            <h1
-                class="uppercase font-[family-name:TAN_Nimbus] text-9xl leading-tight"
-            >
-                Sofía & <br />
-                Franco
-            </h1>
-        </div>
-    </section>
-    <section
-        id="location"
-        class="min-h-full grid grid-cols-[1fr_1fr] justify-center justify-items-center p-8"
-    >
-        <img src="family.png" class="max-h-full min-h-0" />
-        <div class="text-center flex flex-col justify-between">
             <div
-                class="text-8xl font-[family-name:TAN_Nimbus] leading-tight align-center font-light"
+                class="flex justify-around px-10 py-6 text-2xl font-thin tracking-widest"
             >
-                10 de abril <br />
-                2027
+                <span>Playa del Carmen, México</span>
+                <span>10 · 04 · 2027</span>
             </div>
-
-            <div class="gap-y-2 flex flex-col">
-                <div class="text-6xl font-[family-name:Meditative] font-light">
-                    Ceremonia
-                </div>
-                <div>
-                    <span
-                        class="font-bold text-2xl font-[family-name:Meditative] font-thin"
-                        >5:00 PM</span
-                    >
-                    <span class="font-thin"
-                        >OCCIDENTAL AT XCARET • GAZEBO AT THE BEACH</span
-                    >
-                </div>
-                <div class="font-thin">
-                    El comienzo de una nueva etapa, frente al mar, con ustedes.
-                </div>
+            <div class="flex items-center justify-center text-center">
+                <h1
+                    class="uppercase font-[family-name:TAN_Nimbus] text-9xl leading-tight"
+                >
+                    Sofía & <br />
+                    Franco
+                </h1>
             </div>
-
-            <div>
-                <div class="text-6xl font-[family-name:Meditative] font-light">
-                    Coctél al atardecer
-                </div>
-                <div>
-                    <span
-                        class="font-bold text-3xl font-[family-name:Meditative] font-light"
-                        >6:00 PM</span
-                    >
-                    <span>OCCIDENTAL AT XCARET • OPEN DECK</span>
-                </div>
-                <div>
-                    Un atardecer juntos, para seguir compartiendo este momento.
-                </div>
-            </div>
-
-            <div>
-                <div class="text-6xl font-[family-name:Meditative] font-light">
-                    Recepción
-                </div>
-                <div>
-                    <span
-                        class="font-bold text-3xl font-[family-name:Meditative] font-light"
-                        >7:00 PM</span
-                    >
-                    <span>OCCIDENTAL AT XCARET • BEACH CLUB</span>
-                </div>
-                <div>
-                    Seguimos juntos, brindando, compartiendo y bailando hasta
-                    que <br />el cuerpo aguante.
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="ubicacion" class="min-h-full">
-        <div
-            class="grid grid-cols-[2fr_3fr] p-8 bg-[var(--color-on-primary)] text-[var(--color-primary)]"
+        </section>
+        <section
+            id="schedule"
+            class="grid grid-cols-[1fr_1fr] justify-center justify-items-center p-8 h-svh w-svw snap-start"
         >
-            <div class="px-16 py-8 gap-8 flex flex-col">
-                <div class="gap-3 flex flex-col">
-                    <h1
-                        class="text-6xl font-[family-name:Meditative] font-thin"
-                    >
-                        Occidental at <br />Xcaret Destination
-                    </h1>
-                    <span class="font-thin text-xs text-justify">
-                        Camino a Xcaret Carretera Federal Chetumal - <br />
-                        Puerto, Avenida Benito Juárez, 282, 77710 <br />Playa
-                        del Carmen, Q.R., México
-                    </span>
+            <img src="family.png" class="max-h-full min-h-0" />
+            <div class="text-center flex flex-col justify-between">
+                <div
+                    class="text-8xl font-[family-name:TAN_Nimbus] leading-tight align-center font-light"
+                >
+                    10 de abril <br />
+                    2027
                 </div>
-                <button
-                    class="rounded-full p-2 bg-[var(--color-primary)] text-[var(--color-on-primary)] p-2 flex justify-center items-center gap-4 px-4 font-thin text-xl w-max"
-                    href="https://maps.app.goo.gl/3XJYvdT5k5KsA13K7"
+                <div class="gap-y-2 flex flex-col">
+                    <div
+                        class="text-6xl font-[family-name:Meditative] font-light"
+                    >
+                        Ceremonia
+                    </div>
+                    <div>
+                        <span
+                            class="font-bold text-2xl font-[family-name:Meditative] font-thin"
+                            >5:00 PM</span
+                        >
+                        <span class="font-thin"
+                            >OCCIDENTAL AT XCARET • GAZEBO AT THE BEACH</span
+                        >
+                    </div>
+                    <div class="font-thin">
+                        El comienzo de una nueva etapa, frente al mar, con
+                        ustedes.
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="text-6xl font-[family-name:Meditative] font-light"
+                    >
+                        Coctél al atardecer
+                    </div>
+                    <div class="font-thin">
+                        <span
+                            class="font-bold text-3xl font-[family-name:Meditative] font-light"
+                            >6:00 PM</span
+                        >
+                        <span>OCCIDENTAL AT XCARET • OPEN DECK</span>
+                    </div>
+                    <div class="font-thin">
+                        Un atardecer juntos, para seguir compartiendo este
+                        momento.
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="text-6xl font-[family-name:Meditative] font-light"
+                    >
+                        Recepción
+                    </div>
+                    <div>
+                        <span
+                            class="font-bold text-3xl font-[family-name:Meditative] font-light"
+                            >7:00 PM</span
+                        >
+                        <span>OCCIDENTAL AT XCARET • BEACH CLUB</span>
+                    </div>
+                    <div>
+                        Seguimos juntos, brindando, compartiendo y bailando
+                        hasta que <br />el cuerpo aguante.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="ubicacion" class="h-svh w-svw snap-start">
+            <div
+                class="grid grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)]"
+            >
+                <div class="px-16 py-4 gap-8 flex flex-col">
+                    <div class="gap-3 flex flex-col">
+                        <h1
+                            class="text-6xl font-[family-name:Meditative] font-thin"
+                        >
+                            Occidental at <br />Xcaret Destination
+                        </h1>
+                        <span class="font-thin text-xs text-justify">
+                            Camino a Xcaret Carretera Federal Chetumal -
+                            <br />
+                            Puerto, Avenida Benito Juárez, 282, 77710
+                            <br />Playa del Carmen, Q.R., México
+                        </span>
+                    </div>
+                    <a
+                        class="rounded-full p-2 bg-[var(--color-primary)] text-[var(--color-on-primary)] p-2 flex justify-center items-center gap-4 px-4 font-thin text-xl w-max"
+                        href="https://maps.app.goo.gl/3XJYvdT5k5KsA13K7"
+                        target="_blank"
+                    >
+                        Ver hotel
+                        <div
+                            class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm"
+                        >
+                            >
+                        </div>
+                    </a>
+                </div>
+                <div class="font-thin gap-8 flex flex-col justify-center">
+                    <div class="space-y-2">
+                        <h1 class="font-bold text-xl">HOSPEDAJE</h1>
+                        <p>
+                            Nuestros invitados deberán estar hospedados la noche
+                            del evento en el hotel.
+                        </p>
+                        <p>
+                            Recomendamos reservar con anticipación para asegurar
+                            disponibilidad.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <h1 class="font-bold text-xl">RESERVACIÓN</h1>
+                        <p>
+                            Se puede realizar directamente en su página web o a
+                            través de cualquier plataforma como Booking,
+                            Despegar, etc.
+                        </p>
+                        <p>
+                            En la página web ya se encuentra habilitada la
+                            fecha.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gap-8 px-8">
+                <h1
+                    class="text-5xl font-[family-name:Meditative] font-thin p-16"
+                >
+                    Lo que tenés que saber
+                </h1>
+                <div
+                    class="grid grid-cols-3 text-[var(--color-on-primary)] font-thin"
+                >
+                    <div class="flex max-w-[40ch]">
+                        <div
+                            class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
+                        >
+                            VUELOS
+                        </div>
+                        <span class="space-y-4 text-justify">
+                            <p>
+                                Para llegar, van a volar al Aeropuerto
+                                Internacional de Cancún, el más cercano a Playa
+                                del Carmen.
+                            </p>
+                            <p>
+                                Si pueden, empiecen a mirar vuelos desde mayo de
+                                2026 para conseguir mejores opciones y precios.
+                            </p>
+                            <p>
+                                Y no se olviden de revisar con tiempo los
+                                requisitos de ingreso a México según su país de
+                                origen.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex h-min max-w-[40ch]">
+                        <div
+                            class="[writing-mode:sideways-lr] h-min p-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center"
+                        >
+                            TRANSPORTE
+                            <span class="text-sm">aeropuerto-hotel</span>
+                        </div>
+                        <span class="space-y-4 text-justify">
+                            <p>
+                                El hotel se encuentra a aproximadamente 65 km
+                                del Aeropuerto Internacional de Cancún.
+                            </p>
+                            <p>
+                                Nuestra recomendación es coordinar el traslado
+                                directamente con el hotel, para que puedan
+                                esperarlos a su llegada y llevarlos cómodamente.
+                            </p>
+                            <p>
+                                Como alternativa, pueden utilizar los servicios
+                                de transporte privado o taxis autorizados.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="flex h-min max-w-[40ch]">
+                        <div
+                            class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
+                        >
+                            DRESSCODE
+                        </div>
+                        <span class="space-y-4 text-justify">
+                            <p>
+                                Al ser una boda en la playa, la idea es que se
+                                sientan cómodos y frescos, sin dejar de lado la
+                                elegancia caribeña.
+                            </p>
+                            <p>
+                                Vestidos sueltos, telas livianas como lino o
+                                algodón, camisas frescas y looks relajados que
+                                acompañen el paisaje y la celebración.
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section
+            id="musica"
+            class="h-min grid grid-cols-[1.5fr_1fr] px-32 py-8 h-svh w-svw snap-start"
+        >
+            <div class="row-span-3">
+                <h1
+                    class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
+                >
+                    Si esto no se baila, no entra
+                </h1>
+                <span
+                    class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
+                >
+                    <p>México, Argentina y una playlist armada entre todos.</p>
+                    <p>Es el momento de bailar lo mejor de ambos países</p>
+                </span>
+                <a
+                    id="add_music"
+                    class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-max"
+                    href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
                     target="_blank"
                 >
-                    Ver hotel
+                    Sumá esa canción que no puede faltar
                     <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm"
+                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
                     >
                         >
                     </div>
-                </button>
+                </a>
             </div>
-            <div class="font-thin gap-8 flex flex-col justify-center">
-                <div class="" gap-8>
-                    <h1 class="font-bold text-xl">HOSPEDAJE</h1>
-                    Nuestros invitados deberán estar hospedados la noche del
-                    evento en el hotel. <br />Recomendamos reservar con
-                    anticipación para asegurar disponibilidad.
-                </div>
-                <div>
-                    <h1 class="font-bold text-xl">RESERVACIÓN</h1>
-                    Se puede realizar directamente en su página web o a través
-                    de cualquier plataforma como Booking, Despegar, etc.
-                    <br />En la página web ya se encuentra habilitada la fecha.
-                </div>
+            <div class="flex justify-center">
+                <img
+                    class="w-full max-w-[40rem] h-auto"
+                    src="dancing_dog.jpeg"
+                />
             </div>
-        </div>
-        <div class="gap-8 px-8">
-            <h1 class="text-5xl font-[family-name:Meditative] font-thin p-16">
-                Lo que tenés que saber
-            </h1>
-            <div
-                class="grid grid-cols-3 text-[var(--color-on-primary)] font-thin"
-            >
-                <div class="flex max-w-[40ch]">
-                    <div
-                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
-                    >
-                        VUELOS
-                    </div>
-                    <span class="gap-8 text-justify">
-                        Para llegar, van a volar al Aeropuerto Internacional de
-                        Cancún, el más cercano a Playa del Carmen. <br />
-                        Si pueden, empiecen a mirar vuelos desde mayo de 2026
-                        para conseguir mejores opciones y precios.<br />
-                        Y no se olviden de revisar con tiempo los requisitos de
-                        ingreso a México según su país de origen.
-                    </span>
-                </div>
-                <div class="flex h-min max-w-[40ch]">
-                    <div
-                        class="[writing-mode:sideways-lr] h-min p-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center"
-                    >
-                        TRANSPORTE
-                        <span class="text-sm">aeropuerto-hotel</span>
-                    </div>
-                    <span class="gap-8 text-justify">
-                        El hotel se encuentra a aproximadamente 65 km del
-                        Aeropuerto Internacional de Cancún. <br />
-                        Nuestra recomendación es coordinar el traslado
-                        directamente con el hotel, para que puedan esperarlos a
-                        su llegada y llevarlos cómodamente.<br />
-                        Como alternativa, pueden utilizar los servicios de
-                        transporte privado o taxis autorizados.
-                    </span>
-                </div>
-                <div class="flex h-min max-w-[40ch]">
-                    <div
-                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center"
-                    >
-                        DRESSCODE
-                    </div>
-                    <span class="gap-8 text-justify">
-                        <p>
-                            Al ser una boda en la playa, la idea es que se
-                            sientan cómodos y frescos, sin dejar de lado la
-                            elegancia caribeña.
-                        </p>
-
-                        <p>
-                            Vestidos sueltos, telas livianas como lino o
-                            algodón, camisas frescas y looks relajados que
-                            acompañen el paisaje y la celebración.
-                        </p>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="musica" class="h-min grid grid-cols-[1.5fr_1fr] px-32 py-8">
-        <div class="row-span-3">
+        </section>
+        <section
+            class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center h-svh w-svw snap-start"
+        >
             <h1
-                class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
+                class="text-5xl font-[family-name:Meditative] tracking-wide font-thin"
             >
-                Si esto no se baila, no entra
+                Lo importante es estar
             </h1>
-            <span
-                class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
-            >
-                <p>México, Argentina y una playlist armada entre todos.</p>
-                <p>Es el momento de bailar lo mejor de ambos países</p>
-            </span>
+            <p class="max-w-[50ch] text-justify font-thin">
+                Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
+                enorme), así que con que estén ahí acompañándonos, ya lo es todo
+                para nosotros.
+            </p>
+            <p class="max-w-[50ch] text-justify font-thin">
+                Si igualmente alguien quiere sumar algo más, puede hacerlo acá:
+            </p>
             <button
-                id="add_music"
-                class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+                class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
             >
-                Sumá esa canción que no puede faltar
-                <div
-                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
-                >
-                    >
-                </div>
+                [Número de Cuenta] | Franco César Schiavinato | Bank of America
             </button>
-        </div>
-        <div class="flex justify-center">
-            <img class="w-full max-w-[40rem] h-auto" src="dancing_dog.jpeg" />
-        </div>
-    </section>
-    <section
-        class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center"
-    >
-        <h1
-            class="text-5xl font-[family-name:Meditative] tracking-wide font-thin"
+            <p class="font-thin">(o USD efectivo)</p>
+        </section>
+        <section
+            id="confirmacion"
+            class="flex flex-col items-center h-svh w-svw snap-start"
         >
-            Lo importante es estar
-        </h1>
-        <p class="max-w-[50ch] text-justify font-thin">
-            Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
-            enorme), así que con que estén ahí acompañándonos, ya lo es todo
-            para nosotros.
-        </p>
-        <p class="max-w-[50ch] text-justify font-thin">
-            Si igualmente alguien quiere sumar algo más, puede hacerlo acá:
-        </p>
-        <button
-            class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
-        >
-            [Número de Cuenta] | Franco César Schiavinato | Bank of America
-        </button>
-        <p class="font-thin">(o USD efectivo)</p>
-    </section>
-    <section id="confirmacion" class="flex flex-col items-center min-h-full">
-        <h1
-            class="text-6xl font-[family-name:Meditative] tracking-wide font-thin m-24"
-        >
-            ¿Nos acompañás?
-        </h1>
-        <div class="grid grid-cols-2 place-content-start font-thin w-full">
-            <div class="flex flex-col items-center text-center">
-                <p class="text-justify max-w-96">
-                    Para que todo fluya mejor, te pedimos que confirmes tu
-                    asistencia antes del <b>1ero de agosto 2027.</b>
-                </p>
-                <button
-                    id="confirm_button"
-                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+            <h1
+                class="text-6xl font-[family-name:Meditative] tracking-wide font-thin m-24"
+            >
+                ¿Nos acompañás?
+            </h1>
+            <div class="grid grid-cols-2 place-content-start font-thin w-full">
+                <div
+                    class="flex flex-col items-center text-center justify-between"
                 >
-                    Confirmar asistencia
-                    <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                    <p class="text-justify max-w-96">
+                        Para que todo fluya mejor, te pedimos que confirmes tu
+                        asistencia antes del <b>1ero de agosto 2027.</b>
+                    </p>
+                    <button
+                        id="confirm_button"
+                        class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
                     >
+                        Confirmar asistencia
+                        <div
+                            class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
                         >
-                    </div>
-                </button>
-            </div>
-            <div class="flex flex-col items-center">
-                <p class="max-w-96 text-justify">
-                    Una vez que tengan su reservación en el hotel, les pedimos
-                    por favor que completen los datos que el hotel necesita
-                </p>
-                <button
-                    id="fulfill_reservation"
-                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
-                >
-                    Completar datos
-                    <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                            >
+                        </div>
+                    </button>
+                </div>
+                <div class="flex flex-col items-center justify-around">
+                    <p class="max-w-96 text-justify">
+                        Una vez que tengan su reservación en el hotel, les
+                        pedimos por favor que completen los datos que el hotel
+                        necesita
+                    </p>
+                    <button
+                        id="fulfill_reservation"
+                        class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
                     >
+                        Completar datos
+                        <div
+                            class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
                         >
-                    </div>
-                </button>
+                            >
+                        </div>
+                    </button>
+                </div>
             </div>
-        </div>
-    </section>
-    <section
-        id="faq"
-        class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center"
-    >
-        <h1 class="text-5xl font-[family-name:Meditative] font-light">
-            ¿Tenés alguna duda o necesitas ayuda?
-        </h1>
-    </section>
-</body>
+        </section>
+        <section
+            id="faq"
+            class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center h-svh w-svw snap-start"
+        >
+            <h1 class="text-5xl font-[family-name:Meditative] font-light">
+                ¿Tenés alguna duda o necesitas ayuda?
+            </h1>
+        </section>
+    </body>
+</html>
