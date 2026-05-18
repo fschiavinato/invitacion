@@ -10,25 +10,25 @@
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
 </head>
-<html class="snap-y snap-mandatory text-[1.7vh] w-full">
+<html class="snap-y snap-mandatory text-[1.7vh]">
     <body
-        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)] w-svw"
+        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)] overflow-x-hidden"
     >
         <section
             id="intro"
             class="flex flex-col gap-16 h-svh w-full justify-center snap-start"
         >
             <div
-                class="flex justify-around px-10 py-6 text-2xl font-thin tracking-widest"
+                class="flex justify-around md:px-10 py-6 text-2xl font-thin md:tracking-widest"
             >
                 <span>Playa del Carmen, México</span>
                 <span>10 · 04 · 2027</span>
             </div>
             <div class="flex items-center justify-center text-center">
                 <h1
-                    class="uppercase font-[family-name:TAN_Nimbus] text-9xl leading-tight"
+                    class="uppercase font-[family-name:TAN_Nimbus] text-6xl md:text-9xl leading-tight"
                 >
                     Sofía & <br />
                     Franco
@@ -105,9 +105,9 @@
                 </div>
             </div>
         </section>
-        <section id="ubicacion" class="h-svh snap-start w-max">
+        <section id="ubicacion" class="h-svh snap-start w-full">
             <div
-                class="grid grid-cols-1md:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)] w-svw"
+                class="grid grid-cols-1 h-svh md:h-auto md:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)]"
             >
                 <div class="px-16 py-4 gap-8 flex flex-col">
                     <div class="gap-3 flex flex-col">
@@ -241,7 +241,7 @@
         </section>
         <section
             id="musica"
-            class="h-min grid grid-cols-[1.5fr_1fr] px-32 py-8 h-svh w-svw snap-start"
+            class="h-min grid md:grid-cols-[1.5fr_1fr] px-32 py-8 h-svh w-svw snap-start"
         >
             <div class="row-span-3">
                 <h1
@@ -269,9 +269,9 @@
                     </div>
                 </a>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center aspect-square">
                 <img
-                    class="w-full max-w-[40rem] h-auto"
+                    class="w-full max-w-[40rem] h-auto aspect-square"
                     src="dancing_dog.jpeg"
                 />
             </div>
