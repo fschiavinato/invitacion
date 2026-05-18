@@ -10,14 +10,15 @@
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<html class="snap-y snap-mandatory text-[1.7vh]">
+<html class="snap-y snap-mandatory text-[1.7vh] w-full">
     <body
-        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)]"
+        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)] w-svw"
     >
         <section
             id="intro"
-            class="flex flex-col gap-16 h-svh w-svw justify-center snap-start"
+            class="flex flex-col gap-16 h-svh w-full justify-center snap-start"
         >
             <div
                 class="flex justify-around px-10 py-6 text-2xl font-thin tracking-widest"
@@ -36,12 +37,12 @@
         </section>
         <section
             id="schedule"
-            class="grid grid-cols-[1fr_1fr] justify-center justify-items-center p-8 h-svh w-svw snap-start"
+            class="grid grid-cols-1 md:grid-cols-[1fr_1fr] justify-center justify-items-center p-8 h-svh w-full snap-start"
         >
             <img src="family.png" class="max-h-full min-h-0" />
             <div class="text-center flex flex-col justify-between">
                 <div
-                    class="text-8xl font-[family-name:TAN_Nimbus] leading-tight align-center font-light"
+                    class="text-4xl md:text-8xl font-[family-name:TAN_Nimbus] leading-tight align-center font-light"
                 >
                     10 de abril <br />
                     2027
@@ -104,9 +105,9 @@
                 </div>
             </div>
         </section>
-        <section id="ubicacion" class="h-svh w-svw snap-start">
+        <section id="ubicacion" class="h-svh snap-start w-max">
             <div
-                class="grid grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)]"
+                class="grid grid-cols-1md:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)] w-svw"
             >
                 <div class="px-16 py-4 gap-8 flex flex-col">
                     <div class="gap-3 flex flex-col">
