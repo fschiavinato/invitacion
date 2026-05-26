@@ -10,7 +10,7 @@
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <html class="snap-y snap-mandatory text-[1.7vh]">
     <body
@@ -21,7 +21,7 @@
             class="flex flex-col gap-16 h-svh w-full justify-center snap-start"
         >
             <div
-                class="flex justify-around md:px-10 py-6 text-2xl font-thin md:tracking-widest"
+                class="flex max-md:flex-col justify-around md:px-10 py-6 text-2xl font-thin md:tracking-widest text-center"
             >
                 <span>Playa del Carmen, México</span>
                 <span>10 · 04 · 2027</span>
@@ -237,9 +237,9 @@
         </section>
         <section
             id="musica"
-            class="h-min grid md:grid-cols-[1.5fr_1fr] px-32 py-8 h-svh w-svw snap-start"
+            class="h-min grid md:grid-cols-[2fr_1fr] max-md:px-8 md:px-32 py-8 h-svh w-svw snap-start"
         >
-            <div class="row-span-3">
+            <div>
                 <h1
                     class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
                 >
@@ -253,30 +253,25 @@
                 </span>
                 <a
                     id="add_music"
-                    class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-max"
+                    class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
                     href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
                     target="_blank"
                 >
                     Sumá esa canción que no puede faltar
                     <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                        class="rounded-full bg-white items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4 h-[32px] aspect-square"
                     >
                         >
                     </div>
                 </a>
             </div>
-            <div class="flex justify-center aspect-square">
-                <img
-                    class="w-full max-w-[40rem] h-auto aspect-square"
-                    src="dancing_dog.jpeg"
-                />
-            </div>
+            <img class="aspect-square" src="dancing_dog.jpeg" />
         </section>
         <section
             class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center h-svh w-svw snap-start"
         >
             <h1
-                class="text-5xl font-[family-name:Meditative] tracking-wide font-thin"
+                class="text-5xl font-[family-name:Meditative] tracking-wide font-thin text-center"
             >
                 Lo importante es estar
             </h1>
@@ -304,7 +299,9 @@
             >
                 ¿Nos acompañás?
             </h1>
-            <div class="grid grid-cols-2 place-content-start font-thin w-full">
+            <div
+                class="grid md:grid-cols-2 place-content-start font-thin w-full"
+            >
                 <div
                     class="flex flex-col items-center text-center justify-between"
                 >
