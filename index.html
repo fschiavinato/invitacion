@@ -235,7 +235,7 @@
         </section>
         <section
             id="musica"
-            class="h-min grid md:grid-cols-[2fr_1fr] max-md:px-8 md:px-32 py-8 h-lvh w-svw snap-start"
+            class="h-min grid md:grid-cols-[2fr_1fr] max-md:px-8 md:pl-32 md:pr-8 py-8 w-svw snap-start"
         >
             <div>
                 <h1
@@ -263,7 +263,7 @@
                     </div>
                 </a>
             </div>
-            <img class="aspect-square" src="dancing_dog.jpeg" />
+            <img class="place-self-end" src="dj_dog.png" />
         </section>
         <section
             class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center max-md:h-lvh w-svw max-md:snap-start"
@@ -284,7 +284,8 @@
             <button
                 class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
             >
-                CUENTA: 483091180970 | SWIFT: BOFAUS3N | Franco César Schiavinato | Bank of America
+                CUENTA: 483091180970 | SWIFT: BOFAUS3N | Franco César
+                Schiavinato | Bank of America
             </button>
             <p class="font-thin">(o USD efectivo)</p>
         </section>
@@ -301,28 +302,46 @@
                     ¿Nos acompañás?
                 </h1>
                 <div
-                    class="flex max-md:flex-col font-thin w-full gap-16 justify-evenly"
+                    class="grid md:grid-cols-2 md:grid-rows-[auto_1fr] grid-rows-2 font-thin w-full gap-16"
                 >
                     <div
-                        class="flex flex-col items-center text-center justify-between"
+                        class="grid row-span-2 grid-rows-subgrid items-start justify-center"
                     >
                         <p class="text-justify max-w-96">
                             Para que todo fluya mejor, te pedimos que confirmes
                             tu asistencia antes del <b>1ero de agosto 2027.</b>
                         </p>
-                        <button
-                            id="confirm_button"
-                            class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
-                        >
-                            Confirmar asistencia
-                            <div
-                                class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4"
+                        <details class="flex flex-col gap-4 group">
+                            <summary
+                                id="confirm_button"
+                                class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer"
                             >
+                                Confirmar asistencia
+                                <div
+                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex inline-block text-[var(--color-primary)] text-sm mx-4 group-open:display-none"
                                 >
-                            </div>
-                        </button>
+                                    >
+                                </div>
+                            </summary>
+
+                            <form>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    class="bg-transparent border-2 border-[var(--color-on-primary)] w-full"
+                                    placeholder="Nombre y Apellido"
+                                />
+                                <input
+                                    type="submit"
+                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center"
+                                    value="Enviar"
+                                />
+                            </form>
+                        </details>
                     </div>
-                    <div class="flex flex-col items-center justify-around">
+                    <div
+                        class="grid row-span-2 grid-rows-subgrid items-start justify-center"
+                    >
                         <p class="max-w-96 text-justify">
                             Una vez que tengan su reservación en el hotel, les
                             pedimos por favor que completen los datos que el
@@ -330,7 +349,7 @@
                         </p>
                         <button
                             id="fulfill_reservation"
-                            class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12"
+                            class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin"
                         >
                             Completar datos
                             <div
