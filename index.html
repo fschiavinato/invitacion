@@ -311,7 +311,10 @@
                             Para que todo fluya mejor, te pedimos que confirmes
                             tu asistencia antes del <b>1ero de agosto 2027.</b>
                         </p>
-                        <details class="flex flex-col gap-4 group open:bg-grey">
+                        <details
+                            class="flex flex-col gap-4 group open:bg-grey"
+                            open
+                        >
                             <summary
                                 id="confirm_button"
                                 class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer"
@@ -324,16 +327,65 @@
                                 </div>
                             </summary>
 
-                            <form>
+                            <form class="flex flex-col gap-8">
                                 <input
                                     type="text"
                                     id="nombre"
-                                    class="bg-transparent border-2 border-[var(--color-on-primary)] w-full"
+                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Nombre y Apellido"
                                 />
+                                <fieldset class="flex flex-col gap-2">
+                                    <div
+                                        class="flex gap-4 group items-center flex-wrap"
+                                    >
+                                        <input
+                                            type="radio"
+                                            id="acepto"
+                                            name="decision"
+                                            value="acepto"
+                                            class="sr-only peer"
+                                        />
+                                        <div
+                                            class="flex flex-wrap radio-circle h-5 w-5 rounded-full border-2 peer-checked:[&_div]:block place-content-center text-center"
+                                        >
+                                            <div
+                                                class="rounded-full h-3 w-3 bg-[var(--color-on-primary)] hidden"
+                                            ></div>
+                                        </div>
+                                        <label
+                                            for="acepto"
+                                            class="cursor-pointer peer-checked:opacity-100 opacity-40"
+                                            >Nos vemos en la playa</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="flex gap-4 group items-center flex-wrap"
+                                    >
+                                        <input
+                                            type="radio"
+                                            id="rechazo"
+                                            name="decision"
+                                            value="rechazo"
+                                            class="sr-only peer"
+                                        />
+                                        <div
+                                            class="flex flex-wrap radio-circle h-5 w-5 rounded-full border-2 peer-checked:[&_div]:block place-content-center"
+                                        >
+                                            <div
+                                                class="rounded-full h-3 w-3 bg-[var(--color-on-primary)] hidden"
+                                            ></div>
+                                        </div>
+                                        <label
+                                            for="rechazo"
+                                            class="cursor-pointer opacity-40 peer-checked:opacity-100"
+                                            >Lamentablemente no puedo
+                                            asistir</label
+                                        >
+                                    </div>
+                                </fieldset>
                                 <input
                                     type="submit"
-                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center"
+                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center self-end"
                                     value="Enviar"
                                 />
                             </form>
@@ -351,7 +403,7 @@
                         <details>
                             <summary
                                 id="fulfill_reservation"
-                                class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin "
+                                class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin"
                             >
                                 Completar datos
                                 <div
