@@ -18,3 +18,7 @@ body {
     --color-primary: #002f6d;
     --color-on-primary: #e6d5b8;
 }
+
+details:open summary {
+    display: none;
+}
