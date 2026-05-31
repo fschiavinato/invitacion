@@ -10,6 +10,7 @@
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <html class="snap-y snap-mandatory text-[1.7vh]">
@@ -170,7 +171,7 @@
             >
                 <div class="flex">
                     <div
-                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
+                        class="[writing-mode:sideways-lr] pr-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
                     >
                         VUELOS
                     </div>
@@ -191,7 +192,7 @@
                 </div>
                 <div class="flex h-min">
                     <div
-                        class="[writing-mode:sideways-lr] h-min p-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center w-24 shrink-0"
+                        class="[writing-mode:sideways-lr] h-min pr-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center w-24 shrink-0"
                     >
                         TRANSPORTE
                         <span class="text-sm">aeropuerto-hotel</span>
@@ -214,7 +215,7 @@
                 </div>
                 <div class="flex h-min">
                     <div
-                        class="[writing-mode:sideways-lr] p-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
+                        class="[writing-mode:sideways-lr] pr-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
                     >
                         DRESSCODE
                     </div>
@@ -352,7 +353,7 @@
                                         <label
                                             for="acepto"
                                             class="cursor-pointer peer-checked:opacity-100 opacity-40"
-                                            >Nos vemos en la playa</label
+                                            >¡Nos vemos en la playa! 🏖️😎</label
                                         >
                                     </div>
                                     <div
@@ -423,13 +424,15 @@
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Número de reservación"
                                 />
-                                <div class="flex gap-6">
+                                <div>
                                     Ingreso:<input
                                         type="date"
                                         id="nombre"
                                         class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none w-min"
                                         value="2027-04-10"
                                     />
+                                </div>
+                                <div>
                                     Salida:
                                     <input
                                         type="date"
@@ -438,6 +441,13 @@
                                         value="2027-04-10"
                                     />
                                 </div>
+                                <textarea
+                                    id="guests"
+                                    name="guests"
+                                    rows="1"
+                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none resize-none overflow-hidden"
+                                    placeholder="One guest per line"
+                                ></textarea>
                                 <input
                                     type="submit"
                                     class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center self-end"
@@ -459,3 +469,12 @@
         </section>
     </body>
 </html>
+
+<script>
+    const textarea = document.getElementById("guests");
+    console.log(textarea);
+    textarea.addEventListener("input", () => {
+        textarea.style.height = "auto";
+        textarea.style.height = textarea.scrollHeight + "px";
+    });
+</script>
