@@ -330,9 +330,12 @@
                                 action="https://formspree.io/f/xnjrknea"
                                 method="POST"
                             >
+                                <input type="hidden" name="_next" value="/" />
+
                                 <input
                                     type="text"
                                     id="nombre"
+                                    name="nombre"
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Nombre y Apellido"
                                 />
@@ -422,33 +425,37 @@
                             >
                                 <input
                                     type="text"
-                                    id="nombre"
+                                    id="titular"
+                                    name="titular"
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Titular reservación"
                                 />
                                 <textarea
                                     id="guests"
-                                    name="guests"
+                                    name="invitados"
                                     rows="1"
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none resize-none overflow-hidden"
                                     placeholder="Otros huespedes"
                                 ></textarea>
                                 <input
                                     type="text"
-                                    id="food_restrictions"
+                                    id="restricciones"
+                                    name="restricciones"
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Restricciones alimentarias"
                                 />
                                 <input
                                     type="text"
-                                    id="nombre"
+                                    id="numero_reserva"
+                                    name="numero_reserva"
                                     class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
                                     placeholder="Número de reservación"
                                 />
                                 <div>
-                                    Ingreso:<input
+                                    Llegada:<input
                                         type="date"
-                                        id="nombre"
+                                        id="llegada"
+                                        name="llegada"
                                         class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none w-min"
                                         value="2027-04-10"
                                     />
@@ -457,7 +464,8 @@
                                     Salida:
                                     <input
                                         type="date"
-                                        id="nombre"
+                                        id="salida"
+                                        name="salida"
                                         class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none w-min"
                                         value="2027-04-10"
                                     />
