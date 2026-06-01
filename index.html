@@ -251,68 +251,78 @@
                 </div>
             </div>
         </section>
-        <section
-            id="musica"
-            class="h-min grid lg:grid-cols-[2fr_1fr] max-lg:px-8 lg:pl-32 lg:pr-8 py-8 w-svw snap-start"
-        >
-            <div>
-                <h1
-                    class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
-                >
-                    Si esto no se baila, no entra
-                </h1>
-                <span
-                    class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
-                >
-                    <p>México, Argentina y una playlist armada entre todos.</p>
-                    <p>Es el momento de bailar lo mejor de ambos países</p>
-                </span>
-                <a
-                    id="add_music"
-                    class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
-                    href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
-                    target="_blank"
-                >
-                    Sumá esa canción que no puede faltar
-                    <div
-                        class="rounded-full bg-white items-center justify-center flex text-[var(--color-primary)] text-sm mx-4 h-[32px] aspect-square"
+        <div class="snap-start">
+            <section
+                id="musica"
+                class="h-min grid lg:grid-cols-[2fr_1fr] max-lg:px-8 lg:pl-32 lg:pr-8 py-8 w-svw"
+            >
+                <div>
+                    <h1
+                        class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
                     >
+                        Si esto no se baila, no entra
+                    </h1>
+                    <span
+                        class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
+                    >
+                        <p>
+                            México, Argentina y una playlist armada entre todos.
+                        </p>
+                        <p>Es el momento de bailar lo mejor de ambos países</p>
+                    </span>
+                    <a
+                        id="add_music"
+                        class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
+                        href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
+                        target="_blank"
+                    >
+                        Sumá esa canción que no puede faltar
+                        <div
+                            class="rounded-full bg-white items-center justify-center flex text-[var(--color-primary)] text-sm mx-4 h-[32px] aspect-square"
                         >
-                    </div>
-                </a>
-            </div>
-            <img
-                id="dj_dog"
-                class="place-self-end max-w-[min(400px, 100%)]"
-                src="dj_dog.png"
-            />
-        </section>
-        <section
-            class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center max-md:h-lvh w-svw max-md:snap-start"
-        >
-            <h1
-                class="text-5xl font-[family-name:Meditative] tracking-wide font-thin text-center"
+                            >
+                        </div>
+                    </a>
+                </div>
+                <img id="dj_dog" class="place-self-end" src="dj_dog.png" />
+            </section>
+            <section
+                class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center max-md:h-lvh w-svw max-md:snap-start"
             >
-                Lo importante es estar
-            </h1>
-            <p class="max-w-[50ch] text-justify font-thin">
-                Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
-                enorme), así que con que estén ahí acompañándonos, ya lo es todo
-                para nosotros.
-            </p>
-            <p class="max-w-[50ch] text-justify font-thin">
-                Si igualmente alguien quiere sumar algo más, puede hacerlo acá:
-            </p>
-            <button
-                class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center"
-            >
-                CUENTA: 483091180970 | SWIFT: BOFAUS3N | Franco César
-                Schiavinato | Bank of America
-            </button>
-            <p class="font-thin">(o USD efectivo)</p>
-        </section>
+                <h1
+                    class="text-5xl font-[family-name:Meditative] tracking-wide font-thin text-center"
+                >
+                    Lo importante es estar
+                </h1>
+                <p class="max-w-[50ch] text-justify font-thin">
+                    Sabemos que viajar hasta Cancún ya es un planazo (y un
+                    esfuerzo enorme), así que con que estén ahí acompañándonos,
+                    ya lo es todo para nosotros.
+                </p>
+                <p class="max-w-[50ch] text-justify font-thin">
+                    Si igualmente alguien quiere sumar algo más, puede hacerlo
+                    acá:
+                </p>
+                <details>
+                    <summary
+                        class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center cursor-pointer"
+                    >
+                        Datos Bancarios
+                    </summary>
+                    <ul>
+                        <li><pre>Cuenta:  483091180970</pre></li>
+                        <li><pre>SWIFT:   FAUS3N</pre></li>
+                        <li><pre>ACH:     021000322</pre></li>
+                        <li><pre>Wire:    026009593</pre></li>
+                        <li><pre>Titular: Franco César Schiavinato</pre></li>
+                        <li><pre>Banco:   Bank of America</pre></li>
+                    </ul>
+                </details>
+                <p class="font-thin">(o USD efectivo)</p>
+            </section>
+        </div>
         <section
-            class="flex flex-col items-center w-dvw snap-start min-h-lvh justify-between snap-start"
+            class="flex flex-col items-center w-dvw snap-start justify-between min-h-lvh snap-start gap-16"
         >
             <div
                 id="confirmacion"
@@ -502,15 +512,15 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section
-            id="faq"
-            class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 gap-8 w-lvw text-center snap-start h-lvh"
-        >
-            <h1 class="text-5xl font-[family-name:Meditative] font-light">
-                ¿Tenés alguna duda o necesitas ayuda? Escribinos <br />¡Nos
-                vemos en la playa!
-            </h1>
+            <section
+                id="faq"
+                class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 gap-8 w-lvw text-center snap-start h-min"
+            >
+                <h1 class="text-5xl font-[family-name:Meditative] font-light">
+                    ¿Tenés alguna duda o necesitas ayuda? Escribinos <br />¡Nos
+                    vemos en la playa!
+                </h1>
+            </section>
         </section>
     </body>
 </html>
