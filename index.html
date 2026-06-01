@@ -312,7 +312,7 @@
             <p class="font-thin">(o USD efectivo)</p>
         </section>
         <section
-            class="flex flex-col items-center w-dvw snap-start h-lvh justify-between snap-start"
+            class="flex flex-col items-center w-dvw snap-start min-h-lvh justify-between snap-start"
         >
             <div
                 id="confirmacion"
@@ -473,7 +473,8 @@
                                     placeholder="Número de reservación"
                                 />
                                 <div>
-                                    Llegada:<input
+                                    Llegada:
+                                    <input
                                         type="date"
                                         id="llegada"
                                         name="llegada"
@@ -501,14 +502,15 @@
                     </div>
                 </div>
             </div>
-            <div
-                id="faq"
-                class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 gap-8 w-lvw text-center"
-            >
-                <h1 class="text-5xl font-[family-name:Meditative] font-light">
-                    ¿Tenés alguna duda o necesitas ayuda?
-                </h1>
-            </div>
+        </section>
+        <section
+            id="faq"
+            class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 gap-8 w-lvw text-center snap-start h-lvh"
+        >
+            <h1 class="text-5xl font-[family-name:Meditative] font-light">
+                ¿Tenés alguna duda o necesitas ayuda? Escribinos <br />¡Nos
+                vemos en la playa!
+            </h1>
         </section>
     </body>
 </html>
