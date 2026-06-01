@@ -19,11 +19,19 @@
     >
         <section
             id="intro"
-            class="flex flex-col gap-16 h-lvh w-full justify-center snap-start"
+            class="flex flex-col gap-16 h-lvh w-full justify-center snap-start bg-transparent"
         >
             <!-- <audio autoplay>
                 <source src="music.mp3" type="audio/mpeg" />
             </audio> -->
+            <video
+                autoplay
+                muted
+                loop
+                class="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+            >
+                <source src="waves.mp4" type="video/mp4" />
+            </video>
             <div
                 class="flex max-lg:flex-col justify-around md:px-10 py-6 text-2xl max-md:text-lg font-thin md:tracking-widest text-center -mt-44"
             >
