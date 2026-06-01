@@ -69,7 +69,7 @@
                 </div>
                 <div class="space-y-4">
                     <div
-                        class="text-4xl xl:text-6xl font-[family-name:Meditative] font-light"
+                        class="text-6xl font-[family-name:Meditative] font-light"
                     >
                         Ceremonia
                     </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="space-y-4">
                     <div
-                        class="text-4xl xl:text-6xl font-[family-name:Meditative] font-light"
+                        class="text-6xl font-[family-name:Meditative] font-light"
                     >
                         Coctél al atardecer
                     </div>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="space-y-4">
                     <div
-                        class="text-4xl xl:text-6xl font-[family-name:Meditative] font-light"
+                        class="text-6xl font-[family-name:Meditative] font-light"
                     >
                         Recepción
                     </div>
@@ -158,7 +158,7 @@
             </div>
             <div class="font-thin text-xl gap-8 flex flex-col justify-center">
                 <div class="space-y-2">
-                    <h1 class="font-bold text-xl">HOSPEDAJE</h1>
+                    <h1 class="font-bold text-2xl">HOSPEDAJE</h1>
                     <p>
                         Nuestros invitados deberán estar hospedados la noche del
                         evento en el hotel.
@@ -169,7 +169,7 @@
                     </p>
                 </div>
                 <div class="space-y-2">
-                    <h1 class="font-bold text-xl">RESERVACIÓN</h1>
+                    <h1 class="font-bold text-2xl">RESERVACIÓN</h1>
                     <p>
                         Se puede realizar directamente en su página web o a
                         través de cualquier plataforma como Booking, Despegar,
@@ -363,9 +363,8 @@
                             </summary>
 
                             <form
+                                id="confirmation_form"
                                 class="flex flex-col gap-8"
-                                action="https://formspree.io/f/xnjrknea"
-                                method="POST"
                             >
                                 <input type="hidden" name="_next" value="/" />
 
@@ -456,9 +455,8 @@
                                 </div>
                             </summary>
                             <form
+                                id="reservation_form"
                                 class="flex flex-col gap-8"
-                                action="https://formspree.io/f/xnjrknea"
-                                method="POST"
                             >
                                 <input
                                     type="text"
@@ -540,25 +538,27 @@
     });
 </script>
 <script>
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("status");
+    const confirmationForm = document.getElementById("confirmation_form");
+    const reservationForm = document.getElementById("reservation_form");
 
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
+    for (const form of [confirmationForm]) {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-        const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-            method: "POST",
-            body: new FormData(form),
-            headers: {
-                Accept: "application/json",
-            },
+            const response = await fetch("https://formspree.io/f/xnjrknea", {
+                method: "POST",
+                body: new FormData(confirmationForm),
+                headers: {
+                    Accept: "application/json",
+                },
+            });
+
+            if (response.ok) {
+                form.replaceWith("Gracias.");
+                confirmationForm.reset();
+            } else {
+                status.textContent = "Ocurrió un error.";
+            }
         });
-
-        if (response.ok) {
-            status.textContent = "Mensaje enviado correctamente.";
-            form.reset();
-        } else {
-            status.textContent = "Ocurrió un error.";
-        }
-    });
+    }
 </script>
