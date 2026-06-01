@@ -24,6 +24,23 @@
             <audio autoplay>
                 <source src="music.mp3" type="audio/mpeg" />
             </audio>
+            <button
+                id="play_music"
+                class="fixed text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-4 px-4 flex text-thin items-center cursor-pointer bottom-12 right-12 z-10"
+                onclick="
+                    const audio = document.querySelector('audio');
+                    const icon = document.querySelector('#mute-icon');
+                    if (audio.paused) {
+                        audio.play();
+                        icon.src = 'unmuted.svg';
+                    } else {
+                        audio.pause();
+                        icon.src = 'muted.svg';
+                    }
+                "
+            >
+                <img id="mute-icon" src="muted.svg" class="h-8" />
+            </button>
             <video
                 autoplay
                 muted
