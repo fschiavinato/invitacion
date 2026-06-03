@@ -54,14 +54,14 @@
                 class="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-20 bg-blue-400"
             ></div>
             <div
-                class="flex max-lg:flex-col justify-around md:px-10 py-6 text-2xl max-md:text-lg font-thin md:tracking-widest text-center -mt-44"
+                class="flex max-lg:flex-col justify-around lg:px-10 py-6 text-2xl max-lg:text-lg font-thin lg:tracking-widest text-center -mt-44"
             >
                 <span>Playa del Carmen, México</span>
                 <span>10 · 04 · 2027</span>
             </div>
             <div class="flex items-center justify-center text-center">
                 <h1
-                    class="uppercase font-[family-name:TAN_Nimbus] text-6xl md:text-9xl leading-tight md:leading-tight"
+                    class="uppercase font-[family-name:TAN_Nimbus] text-6xl lg:text-9xl leading-tight lg:leading-tight"
                 >
                     Sofía & <br />
                     Franco
@@ -70,7 +70,7 @@
         </section>
         <section
             id="schedule"
-            class="grid grid-cols-1 max-md:gap-24 md:grid-cols-[1fr_1fr] items-center justify-center justify-items-center p-8 min-h-screen w-full snap-start"
+            class="grid grid-cols-1 max-lg:gap-24 lg:grid-cols-[1fr_1fr] items-center justify-center justify-items-center p-8 min-h-screen w-full snap-start"
         >
             <img
                 src="family.png"
@@ -133,9 +133,9 @@
         </section>
         <section
             id="ubicacion"
-            class="snap-start w-full grid grid-cols-1 max-md:grid-rows-[auto_1fr] md:h-auto md:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)] max-md:h-lvh"
+            class="snap-start w-full grid grid-cols-1 max-lg:grid-rows-[auto_1fr] lg:h-auto lg:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)] max-lg:h-screen"
         >
-            <div class="max-md:px-4 px-16 py-4 gap-8 flex flex-col">
+            <div class="max-lg:px-4 px-16 py-4 gap-8 flex flex-col">
                 <div class="gap-3 flex flex-col">
                     <h1
                         class="text-6xl font-[family-name:Meditative] font-thin"
@@ -355,6 +355,30 @@
                             Para que todo fluya mejor, te pedimos que confirmes
                             tu asistencia antes del <b>1ero de agosto 2027.</b>
                         </p>
+                        <div
+                            id="confirmation_accepted"
+                            class="text-justify max-w-96 hidden"
+                        >
+                            ¡Gracias por confirmar tu asistencia! Estamos
+                            emocionados de compartir este día tan especial
+                            contigo en la playa. 🌊🏖
+                        </div>
+                        <div
+                            id="confirmation_declined"
+                            class="text-justify max-w-96 hidden"
+                        >
+                            Lamentamos que no puedas acompañarnos. Te
+                            extrañaremos en la celebración, pero esperamos verte
+                            pronto para compartir otros momentos juntos. 💔
+                        </div>
+                        <div
+                            id="confirmation_error"
+                            class="text-justify max-w-96 hidden"
+                        >
+                            Hubo un error al enviar tu reservación. Por favor,
+                            intentá nuevamente o contactanos directamente para
+                            confirmar tu asistencia.
+                        </div>
                         <details
                             class="flex flex-col gap-4 group open:bg-grey items-start"
                         >
@@ -456,6 +480,21 @@
                             hotel necesita
                         </p>
 
+                        <div
+                            id="reservation_accepted"
+                            class="text-justify max-w-96 hidden"
+                        >
+                            ¡Gracias por compartir los detalles de tu
+                            reservación!
+                        </div>
+                        <div
+                            id="reservation_error"
+                            class="text-justify max-w-96 hidden"
+                        >
+                            Hubo un error al enviar tu reservación. Por favor,
+                            intentá nuevamente o contactanos directamente para
+                            confirmar tu asistencia.
+                        </div>
                         <details class="flex flex-col">
                             <summary
                                 id="fulfill_reservation"
@@ -556,19 +595,21 @@
 <script>
     const confirmationForm = document.getElementById("confirmation_form");
     const reservationForm = document.getElementById("reservation_form");
-    confirmationForm.message = (formData) => {
-        const decision = formData.get("decision");
-        const name = formData.get("nombre");
-        const messages = {
-            acepto: `¡Gracias por confirmar tu asistencia! Estamos emocionados de compartir este día tan especial contigo en la playa. 🌊🏖️`,
-            rechazo: `Lamentamos que no puedas acompañarnos. Te extrañaremos en la celebración, pero esperamos verte pronto para compartir otros momentos juntos. 💔`,
+    confirmationForm.showResponse = (formData, error) => {
+        const status = error ? "error" : formData.get("decision");
+        const responseId = {
+            acepto: "#confirmation_accepted",
+            rechazo: "#confirmation_declined",
+            error: "#confirmation_error",
         };
-        return messages[decision];
+        document.querySelector(responseId[status]).classList.remove("hidden");
     };
 
-    reservationForm.message = (formData) => {
-        const name = formData.get("titular");
-        return `¡Gracias por compartir los detalles de tu reservación!`;
+    reservationForm.showResponse = (_, error) => {
+        const responseId = error
+            ? `#reservation_error`
+            : `#reservation_accepted`;
+        document.querySelector(responseId).classList.remove("hidden");
     };
 
     for (const form of [confirmationForm, reservationForm]) {
@@ -584,12 +625,8 @@
                 },
             });
 
-            if (response.ok) {
-                form.replaceWith(form.message(formData));
-                confirmationForm.reset();
-            } else {
-                form.replaceWith("Ocurrió un error.");
-            }
+            form.parentElement.classList.add("hidden");
+            form.showResponse(formData, !response.ok);
         });
     }
 </script>
