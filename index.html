@@ -600,7 +600,7 @@
                 form.replaceWith(form.message(formData));
                 confirmationForm.reset();
             } else {
-                status.textContent = "Ocurrió un error.";
+                form.replaceWith("Ocurrió un error.");
             }
         });
     }
