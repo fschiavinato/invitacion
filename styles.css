@@ -15,8 +15,10 @@
 }
 
 body {
-    --color-primary: #002f6d;
-    --color-on-primary: #e6d5b8;
+    --color-primary: #0063b2;
+    --color-on-secondary: #004c8a;
+
+    --color-on-primary: #f0ead6;
 }
 
 details:open summary {

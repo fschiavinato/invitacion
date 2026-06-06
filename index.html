@@ -26,7 +26,7 @@
             </audio>
             <button
                 id="unmute"
-                class="fixed text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-4 px-4 flex text-thin items-center cursor-pointer bottom-12 right-12 z-10"
+                class="fixed text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-4 px-4 flex text-thin items-center cursor-pointer bottom-12 right-12 z-10"
                 onclick="
                     const audio = document.querySelector('audio');
                     const icon = document.querySelector('#mute-icon');
@@ -74,7 +74,7 @@
         >
             <img
                 src="family.png"
-                class="max-h-[700px] max-w-full min-h-[100px]"
+                class="max-h-[700px] max-w-full min-h-[100px] pt-100 p-12"
             />
             <div
                 class="text-center flex flex-col justify-center gap-10 text-xl"
@@ -133,7 +133,7 @@
         </section>
         <section
             id="ubicacion"
-            class="snap-start w-full grid grid-cols-1 max-lg:grid-rows-[auto_1fr] lg:h-auto lg:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-primary)] max-lg:h-screen"
+            class="snap-start w-full grid grid-cols-1 max-lg:grid-rows-[auto_1fr] lg:h-auto lg:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-on-secondary)] max-lg:h-screen"
         >
             <div class="max-lg:px-4 px-16 py-4 gap-8 flex flex-col">
                 <div class="gap-3 flex flex-col">
@@ -156,7 +156,7 @@
                 >
                     Ver hotel
                     <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-primary)] text-sm"
+                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm"
                     >
                         >
                     </div>
@@ -280,13 +280,13 @@
                     </span>
                     <a
                         id="add_music"
-                        class="font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
+                        class="font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
                         href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
                         target="_blank"
                     >
                         Sumá esa canción que no puede faltar
                         <div
-                            class="rounded-full bg-white items-center justify-center flex text-[var(--color-primary)] text-sm mx-4 h-[32px] aspect-square"
+                            class="rounded-full bg-white items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4 h-[32px] aspect-square"
                         >
                             >
                         </div>
@@ -299,7 +299,7 @@
                 />
             </section>
             <section
-                class="bg-[var(--color-on-primary)] text-xl text-[var(--color-primary)] p-8 flex flex-col gap-8 items-center max-lg:h-screen w-svw max-lg:snap-start"
+                class="bg-[var(--color-on-primary)] text-xl text-[var(--color-on-secondary)] p-8 flex flex-col gap-8 items-center max-lg:h-screen w-svw max-lg:snap-start"
             >
                 <h1
                     class="text-6xl font-[family-name:Meditative] tracking-wide font-thin text-center"
@@ -384,11 +384,11 @@
                         >
                             <summary
                                 id="confirm_button"
-                                class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
+                                class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
                             >
                                 Confirmar asistencia
                                 <div
-                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-primary)] text-sm mx-4 group-open:display-none"
+                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4 group-open:display-none"
                                 >
                                     >
                                 </div>
@@ -465,7 +465,7 @@
                                 </fieldset>
                                 <input
                                     type="submit"
-                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-end"
+                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-end"
                                     value="Confirmar"
                                 />
                             </form>
@@ -498,11 +498,11 @@
                         <details class="flex flex-col">
                             <summary
                                 id="fulfill_reservation"
-                                class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
+                                class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
                             >
                                 Completar datos
                                 <div
-                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-primary)] text-sm mx-4"
+                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4"
                                 >
                                     >
                                 </div>
@@ -561,7 +561,7 @@
                                 </div>
                                 <input
                                     type="submit"
-                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-primary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center self-end cursor-pointer"
+                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center self-end cursor-pointer"
                                     value="Confirmar"
                                 />
                             </form>
@@ -571,7 +571,7 @@
             </div>
             <section
                 id="faq"
-                class="bg-[var(--color-on-primary)] text-[var(--color-primary)] p-8 gap-8 w-lvw text-center snap-start h-min"
+                class="bg-[var(--color-on-primary)] text-[var(--color-on-secondary)] p-8 gap-8 w-lvw text-center snap-start h-min"
             >
                 <h1 class="text-5xl font-[family-name:Meditative] font-light">
                     ¿Tenés alguna duda o necesitas ayuda? Escribinos <br />¡Nos
