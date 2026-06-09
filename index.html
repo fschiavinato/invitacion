@@ -83,7 +83,7 @@
                 class="absolute top-0 left-0 w-full h-full z-[-1] opacity-20 bg-denim"
             ></div>
             <div
-                class="flex max-lg:flex-col justify-around lg:px-10 py-6 text-2xl max-lg:text-lg font-light lg:tracking-[0.35em] tracking-widest text-center -mt-44 text-creamText"
+                class="flex max-lg:flex-col justify-around lg:px-10 py-6 text-2xl max-lg:text-lg font-light tracking-[0.12em] text-center -mt-44 text-creamText"
             >
                 <span>Playa del Carmen, México</span>
                 <span>10 · 04 · 2027</span>
@@ -104,10 +104,10 @@
             class="w-full snap-start lg:h-lvh lg:flex lg:flex-col overflow-hidden"
         >
             <!-- Photo strip -->
-            <div class="grid grid-cols-3 gap-1 h-[260px] lg:h-[47vh] shrink-0 overflow-hidden w-full bg-denim">
-                <img src="foto1.jpg" class="w-full h-full object-cover object-[center_25%]" />
-                <img src="foto2.jpg" class="w-full h-full object-cover object-[center_20%]" />
-                <img src="foto3.jpg" class="w-full h-full object-cover object-center" />
+            <div class="grid grid-cols-3 gap-1 shrink-0 overflow-hidden w-full bg-denim">
+                <img src="foto1.jpg" class="w-full aspect-[4/3] object-cover object-[center_25%]" />
+                <img src="foto2.jpg" class="w-full aspect-[4/3] object-cover object-[center_40%]" />
+                <img src="foto3.jpg" class="w-full aspect-[4/3] object-cover object-center" />
             </div>
             <!-- Terracotta agenda block -->
             <div
@@ -317,7 +317,7 @@
                 <h2 class="font-display text-5xl lg:text-7xl leading-tight max-w-[16ch]">
                     Si esto no se baila, no entra
                 </h2>
-                <div class="font-light text-xl space-y-3 max-w-[24ch]">
+                <div class="font-light text-xl space-y-3 max-w-2xl">
                     <p>México, Argentina y una playlist armada entre todos.</p>
                     <p>Es el momento de bailar lo mejor de ambos países.</p>
                 </div>
@@ -487,12 +487,12 @@
                             class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
                             placeholder="Número de reservación"
                         />
-                        <input
-                            type="text"
+                        <textarea
                             name="invitados"
-                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
-                            placeholder="Nombre y apellido de los húespedes"
-                        />
+                            rows="1"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1 resize-none overflow-hidden"
+                            placeholder="Nombre y apellido de los húespedes (Enter para agregar otro)"
+                        ></textarea>
                         <div class="flex items-center gap-3">
                             <span class="font-light">Llegada:</span>
                             <input
@@ -525,18 +525,15 @@
         <!-- ====================== CIERRE ====================== -->
         <section
             id="cierre"
-            class="snap-start w-full bg-terracotta text-creamText px-6 lg:px-16 py-16 lg:py-24 grid lg:grid-cols-2 items-center gap-12"
+            class="snap-start w-full bg-terracotta text-creamText px-6 lg:px-16 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20"
         >
-            <div class="flex justify-center lg:justify-start lg:pl-8">
                 <h2
-                    class="font-heading text-7xl lg:text-8xl leading-[1.3] text-left max-w-xs"
+                    class="font-heading text-7xl lg:text-8xl leading-[1.3] text-left max-w-xs shrink-0"
                 >
                     ¡Nos vemos en la playa!
                 </h2>
-            </div>
-            <div class="flex justify-center">
                 <div
-                    class="text-ink p-12 lg:p-16 max-w-md font-light leading-relaxed space-y-4 text-center"
+                    class="text-ink p-12 lg:p-16 max-w-[34rem] font-light leading-relaxed space-y-4 text-center shrink-0"
                     style="background:#f0ead6;clip-path:url(#tornNote)"
                 >
                     <p>
@@ -555,7 +552,6 @@
                         Con cariño,<br />Sofi &amp; Franco
                     </p>
                 </div>
-            </div>
         </section>
     </body>
 </html>
