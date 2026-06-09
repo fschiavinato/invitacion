@@ -1,32 +1,61 @@
 <head>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="styles.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: "#640903",
+                        cream: "#ece5d0",
+                        olive: "#5c6a45",
+                        oliveMuted: "#6e7256",
+                        ink: "#3a2a1e",
+                        denim: "#3c5a86",
+                        creamText: "#f0ead6",
+                    },
+                    fontFamily: {
+                        sans: ["Poppins", "ui-sans-serif", "system-ui"],
+                        display: ["'TAN Nimbus'", "serif"],
+                        heading: ["Meditative", "serif"],
+                    },
+                },
+            },
+        };
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <html class="snap-y snap-mandatory text-[1.7vh]">
     <body
-        class="font-[family-name:Space_Mono] font-bold bg-[var(--color-primary)] text-[var(--color-on-primary)] overflow-x-hidden"
+        class="font-sans bg-cream text-ink overflow-x-hidden"
     >
+        <svg width="0" height="0" class="absolute">
+            <defs>
+                <clipPath id="tornNote" clipPathUnits="objectBoundingBox">
+                    <path d="M0.99683 0.99712C0.74341 1.00060 0.47374 0.99728 0.22166 0.99870C0.16890 0.99756 0.11186 1.00082 0.05685 0.99882C0.04448 0.99760 -0.02198 1.01316 0.02065 0.95866C0.03596 0.94992 0.01851 0.93478 0.02372 0.92099C0.04292 0.90300 0.02072 0.87599 0.00837 0.84864C0.00734 0.82590 0.02744 0.80761 0.01505 0.78340C0.01618 0.77190 0.01552 0.75169 0.00411 0.74203C-0.01171 0.73406 0.02352 0.70967 0.01873 0.68779C0.02014 0.66764 0.01843 0.64429 0.01413 0.62046C0.01522 0.61228 0.02003 0.60476 0.01813 0.59691C0.01877 0.58545 0.03433 0.57399 0.02286 0.56440C0.02087 0.56278 0.02318 0.56004 0.02568 0.55710C0.02391 0.55558 0.00933 0.53301 0.01575 0.52373C0.01539 0.51372 0.02823 0.51488 0.01580 0.49302C0.00753 0.49086 0.03388 0.46405 0.04516 0.44404C0.04187 0.43264 0.05024 0.42287 0.05377 0.41135C0.05753 0.39460 0.05372 0.38432 0.07327 0.36935C0.07900 0.35775 0.06447 0.34456 0.07175 0.32686C0.06858 0.32448 0.07750 0.32180 0.07177 0.31777C0.06922 0.31457 0.06411 0.31523 0.06907 0.30855C0.06729 0.30587 0.07481 0.28662 0.07083 0.27268C0.07014 0.27100 0.08140 0.26502 0.07693 0.26091C0.08198 0.25133 0.06545 0.24559 0.07945 0.22368C0.07136 0.21822 0.07434 0.21170 0.07363 0.20531C0.08307 0.19491 0.08682 0.17310 0.10786 0.13401C0.11899 0.12042 0.11762 0.09998 0.13185 0.06536C0.12746 0.06094 0.15034 0.06248 0.16582 0.03415C0.16321 0.02345 0.18048 0.01356 0.17318 0.00152C0.24266 0.00304 0.32708 0.00140 0.41162 0.00184C0.58256 0.00242 0.74118 0.00202 0.90982 0.00188C1.03542 0.01629 0.98936 -0.09287 1.00000 0.36121C0.99426 0.56838 1.00332 0.80125 0.99683 0.99712Z" />
+                </clipPath>
+            </defs>
+        </svg>
+        <!-- ====================== INTRO / HERO ====================== -->
         <section
             id="intro"
-            class="flex flex-col gap-16 h-lvh w-full justify-center snap-start"
+            class="relative isolate flex flex-col gap-16 h-lvh w-full justify-center snap-start bg-denim"
         >
             <audio autoplay>
                 <source src="music.mp3" type="audio/mpeg" />
             </audio>
             <button
                 id="unmute"
-                class="fixed text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-4 px-4 flex text-thin items-center cursor-pointer bottom-12 right-12 z-10"
+                class="fixed text-ink bg-creamText text-xl font-thin rounded-full py-4 px-4 flex items-center cursor-pointer bottom-12 right-12 z-10"
                 onclick="
                     const audio = document.querySelector('audio');
                     const icon = document.querySelector('#mute-icon');
@@ -46,545 +75,493 @@
                 muted
                 loop
                 playsinline
-                class="absolute top-0 left-0 w-full h-full object-cover z-[-2] opacity-50"
+                class="absolute top-0 left-0 w-full h-full object-cover z-[-2] opacity-60"
             >
                 <source src="waves.mp4" type="video/mp4" />
             </video>
             <div
-                class="absolute top-0 left-0 w-full h-full object-cover z-[-1] opacity-20 bg-blue-400"
+                class="absolute top-0 left-0 w-full h-full z-[-1] opacity-20 bg-denim"
             ></div>
             <div
-                class="flex max-lg:flex-col justify-around lg:px-10 py-6 text-2xl max-lg:text-lg font-thin lg:tracking-widest text-center -mt-44"
+                class="flex max-lg:flex-col justify-around lg:px-10 py-6 text-2xl max-lg:text-lg font-light lg:tracking-[0.35em] tracking-widest text-center -mt-44 text-creamText"
             >
                 <span>Playa del Carmen, México</span>
                 <span>10 · 04 · 2027</span>
             </div>
             <div class="flex items-center justify-center text-center">
                 <h1
-                    class="uppercase font-[family-name:TAN_Nimbus] text-6xl lg:text-9xl leading-tight lg:leading-tight"
+                    class="uppercase font-display text-6xl lg:text-9xl leading-tight lg:leading-tight text-creamText"
                 >
                     Sofía & <br />
                     Franco
                 </h1>
             </div>
         </section>
+
+        <!-- ====================== AGENDA / SCHEDULE ====================== -->
         <section
             id="schedule"
-            class="grid grid-cols-1 max-lg:gap-24 lg:grid-cols-[1fr_1fr] items-center justify-center justify-items-center p-8 min-h-screen w-full snap-start"
+            class="w-full snap-start lg:h-lvh lg:flex lg:flex-col overflow-hidden"
         >
-            <img
-                src="family.png"
-                class="max-h-[700px] max-w-full min-h-[100px] pt-100 p-12"
-            />
+            <!-- Photo strip -->
+            <div class="grid grid-cols-3 gap-1 h-[260px] lg:h-[47vh] shrink-0 overflow-hidden w-full bg-denim">
+                <img src="foto1.jpg" class="w-full h-full object-cover object-[center_25%]" />
+                <img src="foto2.jpg" class="w-full h-full object-cover object-[center_20%]" />
+                <img src="foto3.jpg" class="w-full h-full object-cover object-center" />
+            </div>
+            <!-- Terracotta agenda block -->
             <div
-                class="text-center flex flex-col justify-center gap-10 text-xl"
+                class="bg-terracotta text-creamText px-8 py-16 lg:py-0 lg:flex-1 flex flex-col items-center justify-center gap-12"
             >
-                <div
-                    class="text-6xl xl:text-8xl font-[family-name:TAN_Nimbus] xl:leading-tight leading-tight align-center font-light"
+                <h2
+                    class="font-display text-6xl lg:text-8xl text-center leading-tight"
                 >
-                    10 de abril <br />
-                    2027
-                </div>
-                <div class="space-y-4">
-                    <div
-                        class="text-6xl font-[family-name:Meditative] font-light"
-                    >
-                        Ceremonia
-                    </div>
-                    <div>
-                        <span
-                            class="font-bold text-2xl font-[family-name:Meditative] font-thin"
-                            >5:00 PM</span
+                    10 de abril 2027
+                </h2>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-8 w-full max-w-5xl text-center"
+                >
+                    <div class="flex flex-col gap-3 items-center">
+                        <h3 class="font-heading text-4xl lg:text-5xl">Ceremonia</h3>
+                        <span class="font-light tracking-[0.2em] text-sm"
+                            >GAZEBO AT THE BEACH</span
                         >
-                        <span class="font-thin"
-                            >OCCIDENTAL AT XCARET • GAZEBO AT THE BEACH</span
+                        <span class="font-display text-3xl lg:text-4xl mt-1"
+                            >17:00 hs</span
                         >
                     </div>
-                </div>
-                <div class="space-y-4">
-                    <div
-                        class="text-6xl font-[family-name:Meditative] font-light"
-                    >
-                        Coctél al atardecer
-                    </div>
-                    <div class="font-thin">
-                        <span
-                            class="font-bold text-2xl font-[family-name:Meditative] font-light"
-                            >6:00 PM</span
+                    <div class="flex flex-col gap-3 items-center">
+                        <h3 class="font-heading text-4xl lg:text-5xl">Cóctel</h3>
+                        <span class="font-light tracking-[0.2em] text-sm"
+                            >OPEN DECK</span
                         >
-                        <span>OCCIDENTAL AT XCARET • OPEN DECK</span>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div
-                        class="text-6xl font-[family-name:Meditative] font-light"
-                    >
-                        Recepción
-                    </div>
-                    <div class="font-thin">
-                        <span
-                            class="font-bold text-2xl font-[family-name:Meditative] font-light"
-                            >7:00 PM</span
+                        <span class="font-display text-3xl lg:text-4xl mt-1"
+                            >18:00 hs</span
                         >
-                        <span>OCCIDENTAL AT XCARET • BEACH CLUB</span>
+                    </div>
+                    <div class="flex flex-col gap-3 items-center">
+                        <h3 class="font-heading text-4xl lg:text-5xl">Recepción</h3>
+                        <span class="font-light tracking-[0.2em] text-sm"
+                            >BEACH CLUB</span
+                        >
+                        <span class="font-display text-3xl lg:text-4xl mt-1"
+                            >19:00 hs</span
+                        >
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ====================== HOTEL ====================== -->
         <section
-            id="ubicacion"
-            class="snap-start w-full grid grid-cols-1 max-lg:grid-rows-[auto_1fr] lg:h-auto lg:grid-cols-[2fr_3fr] p-4 bg-[var(--color-on-primary)] text-[var(--color-on-secondary)] max-lg:h-screen"
+            id="hotel"
+            class="relative isolate snap-start w-full min-h-[80vh] flex items-center justify-center p-6 lg:p-16 bg-denim overflow-hidden"
         >
-            <div class="max-lg:px-4 px-16 py-4 gap-8 flex flex-col">
-                <div class="gap-3 flex flex-col">
-                    <h1
-                        class="text-6xl font-[family-name:Meditative] font-thin"
-                    >
-                        Occidental at <br />Xcaret Destination
-                    </h1>
-                    <span class="font-thin text-xs text-justify">
-                        Camino a Xcaret Carretera Federal Chetumal -
-                        <br />
-                        Puerto, Avenida Benito Juárez, 282, 77710
-                        <br />Playa del Carmen, Q.R., México
-                    </span>
+            <div class="absolute inset-0 -z-20 grid grid-cols-2 lg:grid-cols-4">
+                <img src="hotel-parrot.png" class="w-full h-full object-cover" />
+                <img src="hotel-pier.png" class="w-full h-full object-cover" />
+                <img src="hotel-canal.png" class="w-full h-full object-cover" />
+                <img src="hotel-ruins.png" class="w-full h-full object-cover" />
+            </div>
+            <div class="absolute inset-0 -z-10 bg-cream/60"></div>
+            <div
+                class="relative bg-cream text-ink rounded-[2.5rem] max-w-2xl w-full p-8 lg:p-14 flex flex-col items-center gap-8 text-center shadow-xl"
+            >
+                <h2 class="font-heading text-4xl lg:text-5xl text-terracotta leading-tight">
+                    Occidental at <br />Xcaret Destination
+                </h2>
+                <div class="font-light leading-relaxed space-y-4 max-w-prose">
+                    <p>
+                        Para que podamos disfrutar juntos de toda la celebración,
+                        será necesario hospedarse en el hotel la noche del evento.
+                        Les recomendamos realizar su reserva con anticipación para
+                        asegurar disponibilidad.
+                    </p>
+                    <p>
+                        Pueden hacerlo directamente en la página web del hotel o a
+                        través de plataformas como Booking, Despegar y otras
+                        similares. La fecha de nuestra boda ya se encuentra
+                        habilitada para realizar las reservas.
+                    </p>
                 </div>
                 <a
-                    class="rounded-full p-2 bg-[var(--color-primary)] text-[var(--color-on-primary)] p-2 flex justify-center items-center gap-4 px-4 font-thin text-xl w-max"
                     href="https://maps.app.goo.gl/3XJYvdT5k5KsA13K7"
                     target="_blank"
+                    class="bg-olive text-creamText rounded-full py-2 pl-6 pr-2 flex items-center gap-3 font-light text-lg w-max"
                 >
                     Ver hotel
-                    <div
-                        class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm"
+                    <span
+                        class="rounded-full bg-creamText h-8 w-8 flex items-center justify-center text-olive text-sm"
+                        >&gt;</span
                     >
-                        >
-                    </div>
                 </a>
             </div>
-            <div class="font-thin text-xl gap-8 flex flex-col justify-center">
-                <div class="space-y-2">
-                    <h1 class="font-bold text-2xl">HOSPEDAJE</h1>
-                    <p>
-                        Nuestros invitados deberán estar hospedados la noche del
-                        evento en el hotel.
-                    </p>
-                    <p>
-                        Recomendamos reservar con anticipación para asegurar
-                        disponibilidad.
-                    </p>
-                </div>
-                <div class="space-y-2">
-                    <h1 class="font-bold text-2xl">RESERVACIÓN</h1>
-                    <p>
-                        Se puede realizar directamente en su página web o a
-                        través de cualquier plataforma como Booking, Despegar,
-                        etc.
-                    </p>
-                    <p>En la página web ya se encuentra habilitada la fecha.</p>
-                </div>
-            </div>
         </section>
-        <section id="info" class="gap-8 px-8 max-lg:snap-start min-h-lvh">
-            <h1
-                class="text-5xl font-[family-name:Meditative] font-thin p-8 lg:p-16"
-            >
-                Lo que tenés que saber
-            </h1>
-            <div
-                class="grid max-lg:grid-rows-3 lg:grid-cols-3 text-[var(--color-on-primary)] font-thin gap-16 justify-center"
-            >
-                <div class="flex">
-                    <div
-                        class="[writing-mode:sideways-lr] pr-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
-                    >
-                        VUELOS
-                    </div>
-                    <span class="space-y-4 text-justify max-w-[30ch]">
-                        <p>
-                            Para llegar, van a volar al Aeropuerto Internacional
-                            de Cancún, el más cercano a Playa del Carmen.
-                        </p>
-                        <p>
-                            Si pueden, empiecen a mirar vuelos desde mayo de
-                            2026 para conseguir mejores opciones y precios.
-                        </p>
-                        <p>
-                            Y no se olviden de revisar con tiempo los requisitos
-                            de ingreso a México según su país de origen.
-                        </p>
-                    </span>
-                </div>
-                <div class="flex h-min">
-                    <div
-                        class="[writing-mode:sideways-lr] h-min pr-6 font-[family-name:Meditative] text-3xl text-center tracking-widest self-center w-24 shrink-0"
-                    >
-                        TRANSPORTE
-                        <span class="text-sm">aeropuerto-hotel</span>
-                    </div>
-                    <span class="space-y-4 text-justify max-w-[30ch]">
-                        <p>
-                            El hotel se encuentra a aproximadamente 65 km del
-                            Aeropuerto Internacional de Cancún.
-                        </p>
-                        <p>
-                            Nuestra recomendación es coordinar el traslado
-                            directamente con el hotel, para que puedan
-                            esperarlos a su llegada y llevarlos cómodamente.
-                        </p>
-                        <p>
-                            Como alternativa, pueden utilizar los servicios de
-                            transporte privado o taxis autorizados.
-                        </p>
-                    </span>
-                </div>
-                <div class="flex h-min">
-                    <div
-                        class="[writing-mode:sideways-lr] pr-6 font-[family-name:Meditative] text-3xl tracking-widest self-center w-24 shrink-0"
-                    >
-                        DRESSCODE
-                    </div>
-                    <span class="space-y-4 text-justify max-w-[30ch]">
-                        <p>
-                            Al ser una boda en la playa, la idea es que se
-                            sientan cómodos y frescos, sin dejar de lado la
-                            elegancia caribeña.
-                        </p>
-                        <p>
-                            Vestidos sueltos, telas livianas como lino o
-                            algodón, camisas frescas y looks relajados que
-                            acompañen el paisaje y la celebración.
-                        </p>
-                    </span>
-                </div>
-            </div>
-        </section>
-        <div class="flex flex-col snap-start min-h-lvh justify-between">
-            <section
-                id="musica"
-                class="grid lg:grid-cols-[2fr_1fr] max-lg:h-screen max-lg:px-8 lg:pl-32 lg:pr-8 py-8 w-screen"
-            >
-                <div>
-                    <h1
-                        class="text-6xl font-[family-name:Meditative] tracking-wide font-thin my-8"
-                    >
-                        Si esto no se baila, no entra
-                    </h1>
-                    <span
-                        class="font-[family-name:Space_Mono] text-2xl font-thin tracking-wide space-y-6 max-w-[20ch]"
-                    >
-                        <p>
-                            México, Argentina y una playlist armada entre todos.
-                        </p>
-                        <p>Es el momento de bailar lo mejor de ambos países</p>
-                    </span>
-                    <a
-                        id="add_music"
-                        class="font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center mt-12 w-fit text-center"
-                        href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
-                        target="_blank"
-                    >
-                        Sumá esa canción que no puede faltar
-                        <div
-                            class="rounded-full bg-white items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4 h-[32px] aspect-square"
-                        >
-                            >
-                        </div>
-                    </a>
-                </div>
-                <img
-                    id="dj_dog"
-                    class="place-self-end clip-path-[inset(20px_10px_20px_10px)]"
-                    src="dj_dog.png"
-                />
-            </section>
-            <section
-                class="bg-[var(--color-on-primary)] text-xl text-[var(--color-on-secondary)] p-8 flex flex-col gap-8 items-center max-lg:h-screen w-svw max-lg:snap-start"
-            >
-                <h1
-                    class="text-6xl font-[family-name:Meditative] tracking-wide font-thin text-center"
-                >
-                    Lo importante es estar
-                </h1>
-                <p class="max-w-[50ch] text-justify font-thin">
-                    Sabemos que viajar hasta Cancún ya es un planazo (y un
-                    esfuerzo enorme), así que con que estén ahí acompañándonos,
-                    ya lo es todo para nosotros.
-                </p>
-                <p class="max-w-[50ch] text-justify font-thin">
-                    Si igualmente alguien quiere sumar algo más, puede hacerlo
-                    acá:
-                </p>
-                <details>
-                    <summary
-                        class="text-[var(--color-on-primary)] bg-[var(--color-primary)] rounded-full p-4 flex text-thin align-center cursor-pointer"
-                    >
-                        Datos Bancarios
-                    </summary>
-                    <ul>
-                        <li><pre>Cuenta:  483091180970</pre></li>
-                        <li><pre>SWIFT:   BOFAUS3N</pre></li>
-                        <li><pre>ACH:     021000322</pre></li>
-                        <li><pre>Wire:    026009593</pre></li>
-                        <li><pre>Titular: Franco César Schiavinato</pre></li>
-                        <li><pre>Banco:   Bank of America</pre></li>
-                    </ul>
-                </details>
-                <p class="font-thin">(o USD efectivo)</p>
-            </section>
-        </div>
+
+        <!-- ====================== INFO CARDS ====================== -->
         <section
-            class="flex flex-col text-xl items-center w-dvw snap-start justify-between min-h-lvh snap-start gap-16"
+            id="info"
+            class="snap-start w-full bg-cream px-6 lg:px-16 py-16 lg:py-24"
         >
             <div
-                id="confirmacion"
-                class="flex flex-col items-center w-dvw snap-start"
+                class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
             >
-                <h1
-                    class="text-6xl font-[family-name:Meditative] tracking-wide font-thin m-24 max-lg:mb-8"
-                >
-                    ¿Nos acompañás?
-                </h1>
+                <!-- Vuelos -->
                 <div
-                    class="grid lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:grid-rows-2 font-thin w-full gap-16 p-8"
+                    class="bg-terracotta text-creamText rounded-2xl p-2"
                 >
                     <div
-                        class="grid row-span-2 grid-rows-subgrid items-start justify-center"
+                        class="border-2 border-creamText/80 rounded-xl h-full p-6 lg:p-8 flex flex-col gap-5"
                     >
-                        <p class="text-justify max-w-96">
-                            Para que todo fluya mejor, te pedimos que confirmes
-                            tu asistencia antes del <b>1ero de agosto 2027.</b>
-                        </p>
-                        <div
-                            id="confirmation_accepted"
-                            class="text-justify max-w-96 hidden"
+                        <h3
+                            class="font-heading text-3xl text-center tracking-wide"
                         >
-                            ¡Gracias por confirmar tu asistencia! Estamos
-                            emocionados de compartir este día tan especial
-                            contigo en la playa. 🌊🏖
+                            Vuelos
+                        </h3>
+                        <div class="font-light text-sm leading-relaxed space-y-3 text-center">
+                            <p>
+                                Para llegar, van a volar al Aeropuerto
+                                Internacional de Cancún, el más cercano a Playa del
+                                Carmen.
+                            </p>
+                            <p>
+                                Si pueden, empiecen a mirar vuelos desde mayo de
+                                2026 para conseguir mejores opciones y precios.
+                            </p>
+                            <p>
+                                Y no se olviden de revisar con tiempo los
+                                requisitos de ingreso a México según su país de
+                                origen.
+                            </p>
                         </div>
-                        <div
-                            id="confirmation_declined"
-                            class="text-justify max-w-96 hidden"
-                        >
-                            Lamentamos que no puedas acompañarnos. Te
-                            extrañaremos en la celebración, pero esperamos verte
-                            pronto para compartir otros momentos juntos. 💔
-                        </div>
-                        <div
-                            id="confirmation_error"
-                            class="text-justify max-w-96 hidden"
-                        >
-                            Hubo un error al enviar tu reservación. Por favor,
-                            intentá nuevamente o contactanos directamente para
-                            confirmar tu asistencia.
-                        </div>
-                        <details
-                            class="flex flex-col gap-4 group open:bg-grey items-start"
-                        >
-                            <summary
-                                id="confirm_button"
-                                class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
-                            >
-                                Confirmar asistencia
-                                <div
-                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4 group-open:display-none"
-                                >
-                                    >
-                                </div>
-                            </summary>
-
-                            <form
-                                id="confirmation_form"
-                                class="flex flex-col gap-8"
-                            >
-                                <input type="hidden" name="_next" value="/" />
-
-                                <input
-                                    type="text"
-                                    id="nombre"
-                                    name="nombre"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
-                                    placeholder="Nombre y Apellido"
-                                />
-                                <textarea
-                                    id="assistants"
-                                    name="assistants"
-                                    rows="1"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none resize-none overflow-hidden"
-                                    placeholder="Asistentes "
-                                ></textarea>
-                                <fieldset class="flex flex-col gap-2">
-                                    <div
-                                        class="flex gap-4 group items-center max-w-96"
-                                    >
-                                        <input
-                                            type="radio"
-                                            id="acepto"
-                                            name="decision"
-                                            value="acepto"
-                                            class="sr-only peer"
-                                        />
-                                        <div
-                                            class="flex flex-wrap radio-circle h-5 w-5 rounded-full border-2 peer-checked:[&_div]:block place-content-center text-center"
-                                        >
-                                            <div
-                                                class="rounded-full h-3 w-3 bg-[var(--color-on-primary)] hidden"
-                                            ></div>
-                                        </div>
-                                        <label
-                                            for="acepto"
-                                            class="cursor-pointer peer-checked:opacity-100 opacity-40"
-                                            >¡Nos vemos en la playa! 🏖️😎</label
-                                        >
-                                    </div>
-                                    <div
-                                        class="flex gap-4 group items-center max-w-96"
-                                    >
-                                        <input
-                                            type="radio"
-                                            id="rechazo"
-                                            name="decision"
-                                            value="rechazo"
-                                            class="sr-only peer"
-                                        />
-                                        <div
-                                            class="flex flex-wrap radio-circle h-5 w-5 rounded-full border-2 peer-checked:[&_div]:block place-content-center"
-                                        >
-                                            <div
-                                                class="rounded-full h-3 w-3 bg-[var(--color-on-primary)] hidden"
-                                            ></div>
-                                        </div>
-                                        <label
-                                            for="rechazo"
-                                            class="cursor-pointer opacity-40 peer-checked:opacity-100"
-                                            >Lamentablemente no puedo
-                                            asistir</label
-                                        >
-                                    </div>
-                                </fieldset>
-                                <input
-                                    type="submit"
-                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-end"
-                                    value="Confirmar"
-                                />
-                            </form>
-                        </details>
                     </div>
+                </div>
+                <!-- Transporte -->
+                <div
+                    class="bg-terracotta text-creamText rounded-2xl p-2"
+                >
                     <div
-                        class="grid row-span-2 grid-rows-subgrid items-start justify-center"
+                        class="border-2 border-creamText/80 rounded-xl h-full p-6 lg:p-8 flex flex-col gap-5"
                     >
-                        <p class="max-w-96 text-justify">
-                            Una vez que tengan su reservación en el hotel, les
-                            pedimos por favor que completen los datos que el
-                            hotel necesita
-                        </p>
-
-                        <div
-                            id="reservation_accepted"
-                            class="text-justify max-w-96 hidden"
+                        <h3
+                            class="font-heading text-3xl text-center tracking-wide leading-none"
                         >
-                            ¡Gracias por compartir los detalles de tu
-                            reservación!
+                            Transporte
+                            <span class="block text-xs font-sans font-light tracking-normal mt-1"
+                                >aeropuerto · hotel</span
+                            >
+                        </h3>
+                        <div class="font-light text-sm leading-relaxed space-y-3 text-center">
+                            <p>
+                                El hotel se encuentra a aproximadamente 65 km del
+                                Aeropuerto Internacional de Cancún.
+                            </p>
+                            <p>
+                                Nuestra recomendación es coordinar el traslado
+                                directamente con el hotel, para que puedan
+                                esperarlos a su llegada y llevarlos cómodamente.
+                            </p>
+                            <p>
+                                Como alternativa, pueden utilizar los servicios de
+                                taxi oficiales en el aeropuerto.
+                            </p>
                         </div>
-                        <div
-                            id="reservation_error"
-                            class="text-justify max-w-96 hidden"
+                    </div>
+                </div>
+                <!-- Dresscode -->
+                <div
+                    class="bg-terracotta text-creamText rounded-2xl p-2"
+                >
+                    <div
+                        class="border-2 border-creamText/80 rounded-xl h-full p-6 lg:p-8 flex flex-col gap-5 items-center"
+                    >
+                        <h3
+                            class="font-heading text-3xl text-center tracking-wide"
                         >
-                            Hubo un error al enviar tu reservación. Por favor,
-                            intentá nuevamente o contactanos directamente para
-                            confirmar tu asistencia.
+                            Dresscode
+                        </h3>
+                        <div class="font-light text-sm leading-relaxed space-y-3 text-center">
+                            <p>
+                                Al ser una boda en la playa, la idea es que se
+                                sientan cómodos y frescos, sin dejar de lado la
+                                elegancia caribeña.
+                            </p>
+                            <p>
+                                Vestidos sueltos, telas livianas como lino o
+                                algodón, camisas frescas y looks elegantes pero
+                                caribeños.
+                            </p>
                         </div>
-                        <details class="flex flex-col">
-                            <summary
-                                id="fulfill_reservation"
-                                class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center cursor-pointer self-center"
+                        <a
+                            href="https://www.pinterest.com/search/pins/?q=beach%20wedding%20guest%20outfit"
+                            target="_blank"
+                            class="mt-auto bg-creamText text-terracotta rounded-full py-2 pl-5 pr-2 flex items-center gap-3 font-light text-base w-max"
+                        >
+                            Referencias
+                            <span
+                                class="rounded-full bg-terracotta h-7 w-7 flex items-center justify-center text-creamText text-sm"
+                                >&gt;</span
                             >
-                                Completar datos
-                                <div
-                                    class="rounded-full bg-white h-9 w-9 items-center justify-center flex text-[var(--color-on-secondary)] text-sm mx-4"
-                                >
-                                    >
-                                </div>
-                            </summary>
-                            <form
-                                id="reservation_form"
-                                class="flex flex-col gap-8"
-                            >
-                                <input
-                                    type="text"
-                                    id="titular"
-                                    name="titular"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
-                                    placeholder="Titular reservación"
-                                />
-                                <textarea
-                                    id="guests"
-                                    name="invitados"
-                                    rows="1"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none resize-none overflow-hidden"
-                                    placeholder="Otros huespedes"
-                                ></textarea>
-                                <input
-                                    type="text"
-                                    id="restricciones"
-                                    name="restricciones"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
-                                    placeholder="Restricciones alimentarias"
-                                />
-                                <input
-                                    type="text"
-                                    id="numero_reserva"
-                                    name="numero_reserva"
-                                    class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none"
-                                    placeholder="Número de reservación"
-                                />
-                                <div>
-                                    Llegada:
-                                    <input
-                                        type="date"
-                                        id="llegada"
-                                        name="llegada"
-                                        class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none w-min"
-                                        value="2027-04-10"
-                                    />
-                                </div>
-                                <div>
-                                    Salida:
-                                    <input
-                                        type="date"
-                                        id="salida"
-                                        name="salida"
-                                        class="bg-transparent border-b-2 border-[var(--color-on-primary)] w-full focus:outline-none w-min"
-                                        value="2027-04-10"
-                                    />
-                                </div>
-                                <input
-                                    type="submit"
-                                    class="w-max font-[family-name:Space_Mono] text-[var(--color-on-secondary)] bg-[var(--color-on-primary)] text-xl font-thin rounded-full py-2 px-4 flex text-thin items-center self-end cursor-pointer"
-                                    value="Confirmar"
-                                />
-                            </form>
-                        </details>
+                        </a>
                     </div>
                 </div>
             </div>
-            <section
-                id="faq"
-                class="bg-[var(--color-on-primary)] text-[var(--color-on-secondary)] p-8 gap-8 w-lvw text-center snap-start h-min"
+        </section>
+
+        <!-- ====================== MÚSICA ====================== -->
+        <section
+            id="musica"
+            class="snap-start w-full bg-denim text-creamText px-8 lg:px-24 py-16 lg:py-24 grid lg:grid-cols-[2fr_1fr] items-center gap-12"
+        >
+            <div class="flex flex-col gap-6">
+                <h2 class="font-display text-5xl lg:text-7xl leading-tight max-w-[16ch]">
+                    Si esto no se baila, no entra
+                </h2>
+                <div class="font-light text-xl space-y-3 max-w-[24ch]">
+                    <p>México, Argentina y una playlist armada entre todos.</p>
+                    <p>Es el momento de bailar lo mejor de ambos países.</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-8">
+                <div class="flex flex-col items-center gap-3">
+                    <p class="font-light text-lg text-center">
+                        Sumá esa canción que no puede faltar
+                    </p>
+                    <a
+                        href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
+                        target="_blank"
+                        class="bg-olive text-creamText rounded-full py-2 pl-6 pr-2 flex items-center gap-3 font-light text-lg text-center w-max"
+                    >
+                        Sumala aquí
+                        <span
+                            class="rounded-full bg-creamText h-8 w-8 flex items-center justify-center text-olive text-sm"
+                            >&gt;</span
+                        >
+                    </a>
+                </div>
+                <img id="dj_dog" src="dj_dog.png" class="max-h-64 w-auto" />
+            </div>
+        </section>
+
+        <!-- ====================== MESA DE REGALOS ====================== -->
+        <section
+            id="regalos"
+            class="snap-start w-full bg-denim bg-cover bg-center px-6 lg:px-16 py-16 lg:py-24 flex justify-center lg:justify-end"
+            style="background-image: linear-gradient(rgba(60, 90, 134, 0.5), rgba(60, 90, 134, 0.5)), url('regalos-bg.png')"
+        >
+            <div
+                class="paper-note text-ink max-w-md w-full p-8 lg:p-12 flex flex-col items-center gap-5 text-center"
             >
-                <h1 class="text-5xl font-[family-name:Meditative] font-light">
-                    ¿Tenés alguna duda o necesitas ayuda? Escribinos <br />¡Nos
-                    vemos en la playa!
-                </h1>
-            </section>
+                <h2 class="font-heading text-4xl lg:text-5xl text-denim">
+                    Mesa de Regalos
+                </h2>
+                <p class="font-light leading-relaxed">
+                    Sabemos que viajar hasta Cancún ya es un planazo (y un esfuerzo
+                    enorme), así que con que estén ahí acompañándonos, ya lo es todo
+                    para nosotros.
+                </p>
+                <p class="font-light leading-relaxed">
+                    Si igualmente alguien quiere sumar algo más, puede hacerlo acá:
+                </p>
+                <div class="font-mono text-sm text-left leading-relaxed">
+                    <div>Cuenta:&nbsp;&nbsp;483091180970</div>
+                    <div>SWIFT:&nbsp;&nbsp;&nbsp;BOFAUS3N</div>
+                    <div>ACH:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;021000322</div>
+                    <div>Wire:&nbsp;&nbsp;&nbsp;&nbsp;026009593</div>
+                    <div>Titular: Franco César Schiavinato</div>
+                    <div>Banco:&nbsp;&nbsp;&nbsp;Bank of America</div>
+                </div>
+                <p class="font-light italic">(o USD efectivo)</p>
+            </div>
+        </section>
+
+        <!-- ====================== RSVP / REGISTRO ====================== -->
+        <section
+            id="confirmacion"
+            class="snap-start w-full bg-cream px-6 lg:px-16 py-16 lg:py-24"
+        >
+            <div
+                class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 max-w-6xl mx-auto lg:divide-x divide-terracotta/40"
+            >
+                <!-- RSVP -->
+                <div class="flex flex-col items-center gap-6 text-center lg:px-12">
+                    <h2 class="font-heading text-5xl text-oliveMuted">RSVP</h2>
+                    <p class="font-light leading-relaxed max-w-md">
+                        Para que todo fluya mejor, te pedimos que confirmes tu
+                        asistencia antes del
+                        <b class="font-semibold">1ero de octubre 2027</b>.
+                    </p>
+                    <p class="font-light italic text-sm opacity-70">
+                        Por favor completar individualmente
+                    </p>
+
+                    <div id="confirmation_accepted" class="hidden font-light max-w-md">
+                        ¡Gracias por confirmar tu asistencia! Estamos emocionados de
+                        compartir este día tan especial contigo en la playa. 🌊🏖️
+                    </div>
+                    <div id="confirmation_pending" class="hidden font-light max-w-md">
+                        ¡Gracias por avisarnos! Quedamos atentos a tu confirmación.
+                        Esperamos verte en la playa. 🤞
+                    </div>
+                    <div id="confirmation_declined" class="hidden font-light max-w-md">
+                        Lamentamos que no puedas acompañarnos. Te extrañaremos en la
+                        celebración, pero esperamos verte pronto. 💔
+                    </div>
+                    <div id="confirmation_error" class="hidden font-light max-w-md">
+                        Hubo un error al enviar tu confirmación. Por favor, intentá
+                        nuevamente o contactanos directamente.
+                    </div>
+
+                    <form id="confirmation_form" class="flex flex-col gap-6 w-full max-w-md text-left">
+                        <input
+                            type="text"
+                            name="nombre"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
+                            placeholder="Nombre y apellido"
+                        />
+                        <input
+                            type="text"
+                            name="restriccion"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
+                            placeholder="¿Alguna restricción alimenticia?"
+                        />
+                        <fieldset class="flex flex-col gap-3 mt-2">
+                            <label class="flex gap-3 items-center cursor-pointer group">
+                                <input type="radio" name="decision" value="acepto" class="sr-only peer" />
+                                <span class="h-5 w-5 rounded-[4px] border-2 border-olive flex items-center justify-center shrink-0 peer-checked:[&>span]:block">
+                                    <span class="hidden h-3 w-3 rounded-[2px] bg-olive"></span>
+                                </span>
+                                <span class="opacity-50 peer-checked:opacity-100">¡Nos vemos en la playa! 🏖️</span>
+                            </label>
+                            <label class="flex gap-3 items-center cursor-pointer group">
+                                <input type="radio" name="decision" value="pendiente" class="sr-only peer" />
+                                <span class="h-5 w-5 rounded-[4px] border-2 border-olive flex items-center justify-center shrink-0 peer-checked:[&>span]:block">
+                                    <span class="hidden h-3 w-3 rounded-[2px] bg-olive"></span>
+                                </span>
+                                <span class="opacity-50 peer-checked:opacity-100">Todavía no puedo confirmar</span>
+                            </label>
+                            <label class="flex gap-3 items-center cursor-pointer group">
+                                <input type="radio" name="decision" value="rechazo" class="sr-only peer" />
+                                <span class="h-5 w-5 rounded-[4px] border-2 border-olive flex items-center justify-center shrink-0 peer-checked:[&>span]:block">
+                                    <span class="hidden h-3 w-3 rounded-[2px] bg-olive"></span>
+                                </span>
+                                <span class="opacity-50 peer-checked:opacity-100">Lamentablemente no podré asistir</span>
+                            </label>
+                        </fieldset>
+                        <button
+                            type="submit"
+                            class="bg-olive text-creamText rounded-full py-2 px-6 font-light w-max self-center mt-2 cursor-pointer"
+                        >
+                            Confirmar
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Registro -->
+                <div class="flex flex-col items-center gap-6 text-center lg:px-12">
+                    <h2 class="font-heading text-5xl text-oliveMuted">Registro</h2>
+                    <p class="font-light leading-relaxed max-w-md">
+                        Una vez que tengan su reservación en el hotel, les pedimos
+                        por favor que completen los siguientes datos antes del
+                        <b class="font-semibold">15 de marzo del 2027</b>.
+                    </p>
+
+                    <div id="reservation_accepted" class="hidden font-light max-w-md">
+                        ¡Gracias por compartir los detalles de tu reservación!
+                    </div>
+                    <div id="reservation_error" class="hidden font-light max-w-md">
+                        Hubo un error al enviar tu reservación. Por favor, intentá
+                        nuevamente o contactanos directamente.
+                    </div>
+
+                    <form id="reservation_form" class="flex flex-col gap-6 w-full max-w-md text-left">
+                        <input
+                            type="text"
+                            name="titular"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
+                            placeholder="Nombre y apellido del titular de la reservación"
+                        />
+                        <input
+                            type="text"
+                            name="numero_reserva"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
+                            placeholder="Número de reservación"
+                        />
+                        <input
+                            type="text"
+                            name="invitados"
+                            class="bg-transparent border-b border-terracotta/50 w-full focus:outline-none focus:border-terracotta py-1"
+                            placeholder="Nombre y apellido de los húespedes"
+                        />
+                        <div class="flex items-center gap-3">
+                            <span class="font-light">Llegada:</span>
+                            <input
+                                type="date"
+                                name="llegada"
+                                class="bg-transparent border-b border-terracotta/50 flex-1 focus:outline-none focus:border-terracotta py-1"
+                                value="2027-04-10"
+                            />
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="font-light">Salida:</span>
+                            <input
+                                type="date"
+                                name="salida"
+                                class="bg-transparent border-b border-terracotta/50 flex-1 focus:outline-none focus:border-terracotta py-1"
+                                value="2027-04-12"
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            class="bg-olive text-creamText rounded-full py-2 px-6 font-light w-max self-center mt-2 cursor-pointer"
+                        >
+                            Confirmar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== CIERRE ====================== -->
+        <section
+            id="cierre"
+            class="snap-start w-full bg-terracotta text-creamText px-6 lg:px-16 py-16 lg:py-24 grid lg:grid-cols-2 items-center gap-12"
+        >
+            <div class="flex justify-center lg:justify-start lg:pl-8">
+                <h2
+                    class="font-heading text-7xl lg:text-8xl leading-[1.3] text-left max-w-xs"
+                >
+                    ¡Nos vemos en la playa!
+                </h2>
+            </div>
+            <div class="flex justify-center">
+                <div
+                    class="text-ink p-12 lg:p-16 max-w-md font-light leading-relaxed space-y-4 text-center"
+                    style="background:#f0ead6;clip-path:url(#tornNote)"
+                >
+                    <p>
+                        Nos hace muchísima ilusión compartir este momento tan
+                        especial con ustedes y celebrar juntos en un lugar que
+                        amamos.
+                    </p>
+                    <p>
+                        Si tienen alguna duda sobre el viaje o les gustaría recibir
+                        recomendaciones para aprovechar su estadía, no duden en
+                        escribirnos. Estaremos felices de ayudarlos.
+                    </p>
+                    <p>Gracias por acompañarnos en esta aventura.</p>
+                    <p>¡No vemos la hora de celebrar con ustedes!</p>
+                    <p class="text-oliveMuted font-semibold pt-2">
+                        Con cariño,<br />Sofi &amp; Franco
+                    </p>
+                </div>
+            </div>
         </section>
     </body>
 </html>
 
 <script>
     const textareas = document.querySelectorAll("textarea");
-    console.log(textareas);
     for (const textarea of textareas) {
         textarea.addEventListener("input", () => {
             textarea.style.height = "auto";
@@ -595,20 +572,24 @@
 <script>
     const confirmationForm = document.getElementById("confirmation_form");
     const reservationForm = document.getElementById("reservation_form");
+
     confirmationForm.showResponse = (formData, error) => {
         const status = error ? "error" : formData.get("decision");
         const responseId = {
             acepto: "#confirmation_accepted",
+            pendiente: "#confirmation_pending",
             rechazo: "#confirmation_declined",
             error: "#confirmation_error",
         };
-        document.querySelector(responseId[status]).classList.remove("hidden");
+        document
+            .querySelector(responseId[status] || "#confirmation_error")
+            .classList.remove("hidden");
     };
 
     reservationForm.showResponse = (_, error) => {
         const responseId = error
-            ? `#reservation_error`
-            : `#reservation_accepted`;
+            ? "#reservation_error"
+            : "#reservation_accepted";
         document.querySelector(responseId).classList.remove("hidden");
     };
 
@@ -617,15 +598,19 @@
             event.preventDefault();
             const formData = new FormData(form);
 
-            const response = await fetch("https://formspree.io/f/xnjrknea", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    Accept: "application/json",
-                },
-            });
+            let response;
+            try {
+                response = await fetch("https://formspree.io/f/xnjrknea", {
+                    method: "POST",
+                    body: formData,
+                    headers: { Accept: "application/json" },
+                });
+            } catch (e) {
+                form.showResponse(formData, true);
+                return;
+            }
 
-            form.parentElement.classList.add("hidden");
+            form.classList.add("hidden");
             form.showResponse(formData, !response.ok);
         });
     }

@@ -8,17 +8,46 @@
 
 @font-face {
     font-family: "Meditative";
-    src: url("meditative.woff") format("woff2");
+    src: url("meditative.woff") format("woff");
     font-weight: 200;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-    --color-primary: #0063b2;
-    --color-on-secondary: #004c8a;
+    /* New palette (Canva redesign) */
+    --color-terracotta: #640903;
+    --color-cream: #ece5d0;
+    --color-olive: #5c6a45;
+    --color-olive-muted: #6e7256;
+    --color-ink: #3a2a1e;
+    --color-denim: #3c5a86;
 
-    --color-on-primary: #f0ead6;
+    /* Kept for backwards-compat with existing utility classes */
+    --color-primary: #640903; /* terracotta */
+    --color-on-secondary: #3a2a1e; /* ink */
+    --color-on-primary: #f0ead6; /* cream text */
+
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+}
+
+/* Torn-paper note (Ripped Memo Paper texture from Canva) — Mesa de Regalos */
+.paper-note {
+    background-image: url("ripped-paper.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Cream torn-paper note (cierre) — same torn shape, filled cream */
+.paper-note-cream {
+    background-color: #f0ead6;
+    -webkit-mask-image: url("ripped-paper.png");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("ripped-paper.png");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
 }
 
 details:open summary {
