@@ -32,6 +32,24 @@ body {
     color: var(--color-ink);
 }
 
+/* Subtle paper-grain texture overlay for terracotta sections */
+.paper-texture {
+    position: relative;
+    isolation: isolate;
+}
+.paper-texture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.6;
+    mix-blend-mode: soft-light;
+    background-image: url("paper-texture.png");
+    background-size: cover;
+    background-position: center;
+}
+
 /* Torn-paper note (Ripped Memo Paper texture from Canva) — Mesa de Regalos */
 .paper-note {
     background-image: url("ripped-paper.png");
