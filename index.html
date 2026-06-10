@@ -333,7 +333,7 @@
         <!-- ====================== MÚSICA ====================== -->
         <section
             id="musica"
-            class="snap-start w-full bg-denim text-creamText px-8 lg:px-24 py-16 lg:py-24 grid lg:grid-cols-[2fr_1fr] items-center gap-12"
+            class="snap-start w-full bg-denim text-creamText px-8 lg:px-24 py-16 lg:py-24 grid lg:grid-cols-[1.6fr_1fr] items-center gap-12"
         >
             <div class="flex flex-col gap-6">
                 <h2 class="font-display text-5xl lg:text-7xl leading-tight">
@@ -344,25 +344,51 @@
                     <p>México, Argentina y una playlist armada entre todos.</p>
                     <p>Es el momento de bailar lo mejor de ambos países.</p>
                 </div>
-            </div>
-            <div class="flex flex-col items-center gap-8">
-                <div class="flex flex-col items-center gap-3">
-                    <p class="font-light text-lg text-center">
+                <div class="flex flex-col items-start gap-4 mt-2 self-start">
+                    <p class="font-semibold text-lg">
                         Sumá esa canción que no puede faltar
                     </p>
-                    <a
-                        href="https://open.spotify.com/playlist/1852nKRfqK87tuPCPb2G8U?si=sOfE3I1XRGuytDPkEs0NPw&pi=5uEWOMy-T4O5z"
-                        target="_blank"
-                        class="bg-olive text-creamText rounded-full py-2 pl-6 pr-2 flex items-center gap-3 font-light text-lg text-center w-max"
+                    <form
+                        id="song_form"
+                        class="flex flex-col sm:flex-row items-stretch sm:items-baseline gap-3 w-full"
                     >
-                        Sumala aquí
-                        <span
-                            class="rounded-full bg-creamText h-8 w-8 flex items-center justify-center text-olive text-sm"
-                            >&gt;</span
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="🎵 Canción para la playlist — Boda Sofía & Franco"
+                        />
+                        <input
+                            type="hidden"
+                            name="_cc"
+                            value="franco.schiavinato95@gmail.com"
+                        />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input
+                            type="text"
+                            name="cancion"
+                            required
+                            placeholder="Artista — Tema"
+                            class="w-full sm:flex-1 sm:min-w-0 bg-transparent border-b border-creamText/50 text-creamText placeholder:text-creamText/60 focus:outline-none focus:border-creamText py-2"
+                        />
+                        <button
+                            type="submit"
+                            class="bg-olive text-creamText rounded-full py-2 px-6 font-light cursor-pointer w-max self-start sm:self-auto"
                         >
-                    </a>
+                            Enviar
+                        </button>
+                    </form>
+                    <p
+                        id="song_thanks"
+                        class="hidden font-light text-base"
+                    ></p>
                 </div>
-                <img id="dj_dog" src="dj_dog.png" class="max-h-64 w-auto" />
+            </div>
+            <div class="flex items-center justify-center lg:justify-end">
+                <img
+                    id="dj_dog"
+                    src="dj_dog.png"
+                    class="w-full max-w-md lg:max-w-lg"
+                />
             </div>
         </section>
 
@@ -791,6 +817,36 @@
             form.classList.add("hidden");
             form.showResponse(formData, !ok);
             resetBtn.classList.remove("hidden");
+        });
+    }
+
+    // Song suggestion form — emails the song via FormSubmit
+    const songForm = document.getElementById("song_form");
+    if (songForm) {
+        const songThanks = document.getElementById("song_thanks");
+        songForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const btn = songForm.querySelector("button");
+            btn.disabled = true;
+            let ok = false;
+            try {
+                const r = await fetch(
+                    "https://formsubmit.co/ajax/francocschiavinato@gmail.com",
+                    {
+                        method: "POST",
+                        body: new FormData(songForm),
+                        headers: { Accept: "application/json" },
+                    },
+                );
+                const data = await r.json();
+                ok = r.ok && data.success === "true";
+            } catch (e) {}
+            songThanks.textContent = ok
+                ? "¡Anotada! 🎶 ¿Va otra?"
+                : "Uy, hubo un error. Probá de nuevo.";
+            songThanks.classList.remove("hidden");
+            if (ok) songForm.reset();
+            btn.disabled = false;
         });
     }
 </script>
