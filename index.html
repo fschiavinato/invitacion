@@ -412,6 +412,9 @@
                     </div>
 
                     <form id="confirmation_form" class="flex flex-col gap-6 w-full max-w-md text-left">
+                        <input type="hidden" name="_subject" value="Nueva confirmación (RSVP) — Boda Sofía & Franco" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_captcha" value="false" />
                         <input
                             type="text"
                             name="nombre"
@@ -481,6 +484,9 @@
                     </div>
 
                     <form id="reservation_form" class="flex flex-col gap-6 w-full max-w-md text-left">
+                        <input type="hidden" name="_subject" value="Nuevo registro de hotel — Boda Sofía & Franco" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_captcha" value="false" />
                         <input
                             type="text"
                             name="titular"
@@ -635,11 +641,14 @@
 
             let response;
             try {
-                response = await fetch("https://formspree.io/f/xnjrknea", {
-                    method: "POST",
-                    body: formData,
-                    headers: { Accept: "application/json" },
-                });
+                response = await fetch(
+                    "https://formsubmit.co/ajax/francocschiavinato@gmail.com",
+                    {
+                        method: "POST",
+                        body: formData,
+                        headers: { Accept: "application/json" },
+                    }
+                );
             } catch (e) {
                 form.showResponse(formData, true);
                 return;
