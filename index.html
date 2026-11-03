@@ -736,15 +736,28 @@
     const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwA6L3LSk5sP-UF8-25nrId-ex_ZUXhqfh3S5-npeznCD02zJQYOZk70tPt8NuvPVSVJg/exec";
 
     async function sendToSheets(form) {
+        const btn = form.querySelector('[type="submit"]');
+        const label = btn.innerHTML;
+        btn.disabled = true;
+        btn.setAttribute("aria-busy", "true");
+        btn.classList.add("opacity-70", "cursor-wait");
+        btn.innerHTML =
+            '<span class="inline-block w-4 h-4 mr-2 align-[-2px] border-2 border-current border-t-transparent rounded-full animate-spin"></span>Enviando…';
+
         const body = new URLSearchParams(new FormData(form));
         body.append("_form", form.id);
+        let ok = false;
         try {
             const r = await fetch(SHEETS_URL, { method: "POST", body });
             const data = await r.json();
-            return r.ok && data.success === true;
-        } catch (e) {
-            return false;
-        }
+            ok = r.ok && data.success === true;
+        } catch (e) {}
+
+        btn.innerHTML = label;
+        btn.disabled = false;
+        btn.removeAttribute("aria-busy");
+        btn.classList.remove("opacity-70", "cursor-wait");
+        return ok;
     }
 
     const confirmationForm = document.getElementById("confirmation_form");
@@ -800,10 +813,7 @@
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const formData = new FormData(form);
-            const btn = form.querySelector('[type="submit"]');
-            btn.disabled = true;
             const ok = await sendToSheets(form);
-            btn.disabled = false;
 
             form.classList.add("hidden");
             form.showResponse(formData, !ok);
@@ -817,15 +827,12 @@
         const songThanks = document.getElementById("song_thanks");
         songForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            const btn = songForm.querySelector("button");
-            btn.disabled = true;
             const ok = await sendToSheets(songForm);
             songThanks.textContent = ok
                 ? "¡Anotada! 🎶 ¿Va otra?"
                 : "Uy, hubo un error. Probá de nuevo.";
             songThanks.classList.remove("hidden");
             if (ok) songForm.reset();
-            btn.disabled = false;
         });
     }
 </script>
