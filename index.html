@@ -356,16 +356,13 @@
                         class="flex flex-col sm:flex-row items-stretch sm:items-baseline gap-3 w-full"
                     >
                         <input
-                            type="hidden"
-                            name="_subject"
-                            value="🎵 Canción para la playlist — Boda Sofía & Franco"
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                            style="position: absolute; left: -9999px"
                         />
-                        <input
-                            type="hidden"
-                            name="_cc"
-                            value="franco.schiavinato95@gmail.com"
-                        />
-                        <input type="hidden" name="_captcha" value="false" />
                         <input
                             type="text"
                             name="cancion"
@@ -492,17 +489,13 @@
                         class="flex flex-col gap-6 w-full max-w-md text-left"
                     >
                         <input
-                            type="hidden"
-                            name="_subject"
-                            value="Nueva confirmación (RSVP) — Boda Sofía & Franco"
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                            style="position: absolute; left: -9999px"
                         />
-                        <input
-                            type="hidden"
-                            name="_cc"
-                            value="francocschiavinato@gmail.com"
-                        />
-                        <input type="hidden" name="_template" value="table" />
-                        <input type="hidden" name="_captcha" value="false" />
                         <input
                             type="text"
                             name="nombre"
@@ -629,17 +622,13 @@
                         class="flex flex-col gap-6 w-full max-w-md text-left"
                     >
                         <input
-                            type="hidden"
-                            name="_subject"
-                            value="Nuevo registro de hotel — Boda Sofía & Franco"
+                            type="text"
+                            name="website"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                            style="position: absolute; left: -9999px"
                         />
-                        <input
-                            type="hidden"
-                            name="_cc"
-                            value="francocschiavinato@gmail.com"
-                        />
-                        <input type="hidden" name="_template" value="table" />
-                        <input type="hidden" name="_captcha" value="false" />
                         <input
                             type="text"
                             name="titular"
@@ -742,6 +731,22 @@
     bgMusic.volume = 0.1;
 </script>
 <script>
+    // Google Apps Script web app (ver apps-script/Code.gs). Guarda cada envío
+    // en una pestaña de la planilla según el id del formulario.
+    const SHEETS_URL = "https://script.google.com/macros/s/AKfycbwA6L3LSk5sP-UF8-25nrId-ex_ZUXhqfh3S5-npeznCD02zJQYOZk70tPt8NuvPVSVJg/exec";
+
+    async function sendToSheets(form) {
+        const body = new URLSearchParams(new FormData(form));
+        body.append("_form", form.id);
+        try {
+            const r = await fetch(SHEETS_URL, { method: "POST", body });
+            const data = await r.json();
+            return r.ok && data.success === true;
+        } catch (e) {
+            return false;
+        }
+    }
+
     const confirmationForm = document.getElementById("confirmation_form");
     const reservationForm = document.getElementById("reservation_form");
 
@@ -795,27 +800,10 @@
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const formData = new FormData(form);
-
-            let response;
-            try {
-                response = await fetch(
-                    "https://formsubmit.co/ajax/franco.schiavinato95@gmail.com",
-                    {
-                        method: "POST",
-                        body: formData,
-                        headers: { Accept: "application/json" },
-                    },
-                );
-            } catch (e) {
-                form.showResponse(formData, true);
-                return;
-            }
-
-            let ok = response.ok;
-            try {
-                const data = await response.json();
-                ok = ok && data.success === "true";
-            } catch (e) {}
+            const btn = form.querySelector('[type="submit"]');
+            btn.disabled = true;
+            const ok = await sendToSheets(form);
+            btn.disabled = false;
 
             form.classList.add("hidden");
             form.showResponse(formData, !ok);
@@ -823,7 +811,7 @@
         });
     }
 
-    // Song suggestion form — emails the song via FormSubmit
+    // Song suggestion form
     const songForm = document.getElementById("song_form");
     if (songForm) {
         const songThanks = document.getElementById("song_thanks");
@@ -831,19 +819,7 @@
             event.preventDefault();
             const btn = songForm.querySelector("button");
             btn.disabled = true;
-            let ok = false;
-            try {
-                const r = await fetch(
-                    "https://formsubmit.co/ajax/francocschiavinato@gmail.com",
-                    {
-                        method: "POST",
-                        body: new FormData(songForm),
-                        headers: { Accept: "application/json" },
-                    },
-                );
-                const data = await r.json();
-                ok = r.ok && data.success === "true";
-            } catch (e) {}
+            const ok = await sendToSheets(songForm);
             songThanks.textContent = ok
                 ? "¡Anotada! 🎶 ¿Va otra?"
                 : "Uy, hubo un error. Probá de nuevo.";
